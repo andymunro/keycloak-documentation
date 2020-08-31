@@ -1,5 +1,6 @@
+[id="con-installation-system-requirements_{context}"]
 
-=== System Requirements
+= System requirements
 
 These are the requirements to run the {project_name} authentication server:
 
