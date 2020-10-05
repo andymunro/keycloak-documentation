@@ -8,6 +8,8 @@ To use xref:_oidc[OpenID Connect], an existing application must be secured as an
 
 . Click *Create* to go to the `Add Client` page.
 +
+.Add Client
+image:{project_images}/add-client-oidc.png[Add Client]
 
 . Enter the `Client ID` of the client.
 
@@ -17,6 +19,9 @@ To use xref:_oidc[OpenID Connect], an existing application must be secured as an
 
 . Click *Save*.  This action creates the client and bring you to the `Settings`
 tab.
++
+.Client Settings
+image:{project_images}/client-settings-oidc.png[Client Settings]
 +
 The following list describes each setting:
 +
