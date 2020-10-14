@@ -1,5 +1,9 @@
 [id="proc-enabling-terms-conditions_{context}"]
+<<<<<<< HEAD
 === Terms and conditions
+=======
+= Terms and conditions
+>>>>>>> KEYCLOAK-15641: Update Required Actions (#17)
 
 {project_name} requires new users to accept the terms and conditions before logging in for the first time.    
 
