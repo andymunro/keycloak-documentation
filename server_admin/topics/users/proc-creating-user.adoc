@@ -1,9 +1,5 @@
 [id="proc-creating-user_{context}"]
-<<<<<<< HEAD
-== Creating a user
-=======
 = Creating a user
->>>>>>> Initial work to modularize user content (#15)
 
 Administrators can create users and applications that are owned by the users of a specified realm. In the console, you can add users and register applications to be secured by {project_name}. 
 
@@ -23,7 +19,3 @@ Create users in the same realm that contains the applications for the user. Ever
 NOTE: *Username* is the only required field.
 +   
 . Click *Save*. After saving the details, the *management page* for the new user is displayed.  
-
-
-
-

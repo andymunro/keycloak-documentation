@@ -1,9 +1,5 @@
 [id="proc-configuring-user-attributes_{context}"]
-<<<<<<< HEAD
-== Configuring user attributes
-=======
 = Configuring user attributes
->>>>>>> Initial work to modularize user content (#15)
 
 User attributes provide a customized experience for each user. Using user attributes, you can can create a personalized identity for each user in the console.
 
@@ -18,6 +14,3 @@ User attributes provide a customized experience for each user. Using user attrib
 . Enter the attribute value in the *Value* field.
 . Click *Add*.
 . Click *Save*.
-
-
-
