@@ -4,7 +4,17 @@ include::topics/overview/how.adoc[]
 include::topics/overview/concepts.adoc[]
 include::topics/initialization.adoc[]
 include::topics/admin-console.adoc[]
+<<<<<<< HEAD
 include::topics/assembly-managing-users.adoc[]
+=======
+include::topics/realms/master.adoc[]
+include::topics/realms/create.adoc[]
+include::topics/realms/ssl.adoc[]
+include::topics/realms/cache.adoc[]
+include::topics/realms/email.adoc[]
+include::topics/realms/themes.adoc[]
+include::topics/users.adoc[]
+>>>>>>> Fix Users TOC
 include::topics/login-settings.adoc[]
 include::topics/login-settings/forgot-password.adoc[]
 include::topics/login-settings/remember-me.adoc[]
