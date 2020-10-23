@@ -17,4 +17,3 @@ The welcome page opens, confirming that the server is running.
 image:images/welcome.png[Welcome page]
 
 . Enter a username and password to create an initial admin user.
-
