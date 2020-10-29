@@ -1,4 +1,4 @@
-[id="proc-evalusting_client_scopes_{context}"]
+[id="proc_updating_client_scopes_{context}"]
 
 [role="_abstract"]
 `Realm Default Client Scopes` allow you to define sets of client scopes which are automatically linked to newly created clients.
