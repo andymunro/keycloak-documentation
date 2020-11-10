@@ -3,7 +3,7 @@
 
 Groups in {project_name} manage a common set of attributes and role mappings for each user. Users can be members of any number of groups and inherit the attributes and role mappings assigned to each group.
 
-To manage groups, click the `Groups` left menu item.
+To manage groups, click `Groups` in the left menu.
 
 .Groups
 image:{project_images}/groups.png[]
@@ -17,10 +17,10 @@ In the following example, there is a top level `Sales` group and a child `North 
 To add a group:
 
 . Click the group.
-. Click `New` button.
+. Click `New`.
 . Select the `Groups` icon in the tree to make a top-level group.
 . Enter a group name in the `Create Group` screen.
-. Click `Save`. This will bring you to the individual group management page.
+. Click `Save`. The group management page displays.
 +
 .Group
 image:{project_images}/group.png[]
@@ -37,7 +37,7 @@ To add a user to a group:
 image:{project_images}/user-groups.png[]
 +
 . Select a group from the `Available Groups` tree.
-. Click the `Join` button.
+. Click `Join`.
 
 To remove a group from a user:
 

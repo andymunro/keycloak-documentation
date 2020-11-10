@@ -1,4 +1,4 @@
 == Roles
-A role is a category of user. An application can assign access and permissions to a role and then assign multiple users to that rule, so that the users all share the same access and permissions. For example, the Admin Console has roles that give permission to users to access parts of the Admin Console UI.
+A role typically applies to one type of user. Typical roles in an organization include `Admin`, `user`, `manager`, and `employee`. An application can assign access and permissions to a role and then assign multiple users to that role, so that the users all share the same access and permissions. For example, the Admin Console has roles that give permission to users to access parts of the Admin Console.
 
-There is a global namespace for roles and each client also has its own dedicated namespace where roles can be defined. Typical roles in an organization include `Admin`, `user`, `manager`, and `employee`. 
+There is a global namespace for roles and each client also has its own dedicated namespace where roles can be defined. 

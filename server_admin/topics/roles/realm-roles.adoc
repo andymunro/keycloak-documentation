@@ -1,6 +1,6 @@
 
 === Realm Roles
-Realm-level roles are a namespace for defining your roles. You can see the list of roles by clicking the `Roles` left menu item.
+Realm-level roles are a namespace for defining your roles. To see the list of roles, click in the `Roles` left menu.
 
 image:{project_images}/roles.png[]
 
