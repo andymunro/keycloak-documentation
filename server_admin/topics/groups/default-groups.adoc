@@ -5,7 +5,7 @@ To automatically assign group membership to new users, that are created or impor
 
 To specify default groups:
 
-. Click the `Groups` left menu item.
+. Click `Groups` in the left menu.
 . Click the `Default Groups` tab.
 
 .Default Groups
