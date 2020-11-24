@@ -1,6 +1,12 @@
+[id="ref-saml-vs-oidc_{context}"]
 
+<<<<<<< HEAD:server_admin/topics/sso-protocols/saml-vs-oidc.adoc
 === OpenID Connect compared to SAML
 
+=======
+=== OpenID Connect vs. SAML
+[role="_abstract"]
+>>>>>>> Modularization:server_admin/topics/sso-protocols/ref-saml-vs-oidc.adoc
 The following lists a number of factors to consider when choosing a protocol.
 
 <<<<<<< HEAD

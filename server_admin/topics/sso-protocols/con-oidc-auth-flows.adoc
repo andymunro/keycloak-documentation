@@ -1,28 +1,7 @@
-[id="con-oidc_{context}"]
-
-=== OpenID Connect
-
-link:https://openid.net/connect/[OpenID Connect] (OIDC) is an authentication protocol that is an extension of link:https://tools.ietf.org/html/rfc6749[OAuth 2.0].
-
-OAuth 2.0 is a framework for building authorization protocols and is incomplete. OIDC, however, is a full authentication and authorization protocol that uses the link:https://jwt.io[Json Web Token] (JWT) standards.  The JWT standards define an identity token JSON format and methods to digitally sign and encrypt data in a compact and web-friendly way.
-
-In general, OIDC implements two use cases. The first case is an application requesting that a  {project_name} server authenticates a user. Upon successful login, the application receives an _identity token_ and an _access token_. 
-The _identity token_ contains user information including user name, email, and profile information. The realm digitally signs the _access token_ which contains access information (such as user role mappings) that applications use to determine the resources users can access in the application.
-
-The second use case is a client accessing remote services. 
-
-* The client requests an _access token_ from {project_name} to invoke on remote services on behalf of the user. 
-* {project_name} authenticates the user and asks the user for consent to grant access to the requesting client.
-* The client receives the _access token_ which is digitally signed by the realm.  
-* The client makes REST requests on remote services using the _access token_. 
-* The remote REST service extracts the _access token_.
-* The remote REST service verifies the tokens signature.
-* The remote REST service decides, based on access information within the token, to process or reject the request.
-
-[[_oidc-auth-flows]]
+[id="con-oidc-auth-flows_{context}"]
 
 ==== OIDC Auth Flows
-
+[role="_abstract"]
 OIDC has several methods, or flows, that clients or applications can use to authenticate users and receive _identity_ and _access_ tokens.  The method depends on the type of application or client requesting access.
 
 [[_oidc-auth-flows-authorization]]
@@ -45,17 +24,8 @@ A system is vulnerable to a stolen token for the lifetime of that token. For sec
 ====
 
 [[_confidential-clients]]
-<<<<<<< HEAD
-Another important aspect of this flow is the concept of a _public_ vs. a _confidential_ client.  _Confidential_ clients are required
-to provide a client secret when they exchange the temporary codes for tokens.  _Public_ clients are not required to provide this client secret.
-_Public_ clients are perfectly fine so long as HTTPS is strictly enforced and you are very strict about what redirect URIs are registered for the
-client.  HTML5/JavaScript clients always have to be _public_ clients because there is no way to transmit the client secret to them in a secure
-manner.  Again, this is ok so long as you use HTTPS and strictly enforce redirect URI registration.  This guide goes more detail
-into this in the xref:assembly-managing-clients_{context}[Managing Clients] chapter.
-=======
 _Confidential_ clients provide client secrets when they exchange the temporary codes for tokens. _Public_ clients are not required to provide client secrets.
-_Public_ clients are secure when HTTPS is strictly enforced and redirect URIs registered for the client are strictly controlled.  HTML5/JavaScript clients have to be _public_ clients because there is no way to securely transmit the client secret to HTML5/JavaScript clients. For more details, see the <<_clients, Managing Clients>> chapter.
->>>>>>> KEYCLOAK-16234 initial commit
+_Public_ clients are secure when HTTPS is strictly enforced and redirect URIs registered for the client are strictly controlled.  HTML5/JavaScript clients have to be _public_ clients because there is no way to securely transmit the client secret to HTML5/JavaScript clients. For more details, see the xref:assembly-managing-clients_{context}[Managing Clients] chapter.
 
 {project_name} also supports the https://tools.ietf.org/html/rfc7636[Proof Key for Code Exchange] specification.
 
@@ -88,6 +58,7 @@ redirects to the application using the callback URL and additionally adds the _i
 ===== Resource Owner Password Credentials Grant (Direct Access Grants)
 
 _Direct Access Grants_ are used by REST clients to obtain tokens on behalf of users.  It is a HTTP POST request that contains:
+
 * The credentials of the user. The credentials are sent within form parameters.
 * The id of the client.
 * The clients secret (if it is a confidential client).
@@ -100,23 +71,3 @@ The HTTP response contains the _identity_, _access_, and _refresh_ tokens.
 The _Client Credentials Grant_ creates a token based on the metadata and permissions of a service account associated with the client instead of obtaining a token that works on behalf of an external user. _Client Credentials Grants_ are used by REST clients.
 
 See the <<_service_accounts,Service Accounts>> chapter for more information.
-
-[[_oidc-endpoints]]
-====  {project_name} Server OIDC URI Endpoints
-
-The following is a list of OIDC endpoints that {project_name} publishes. These endpoints can be used when a non-{project_name} client adapter uses OIDC to communicate with the authentication server. They are all relative URLs. The root of the URL consists of the HTTP(S) protocol, hostname, and the path, which is usually prefixed with _/auth_:  For example $$https://localhost:8080/auth$$
-
-/realms/{realm-name}/protocol/openid-connect/auth::
-  Used for obtaining a temporary code in the Authorization Code Flow or obtaining tokens using the Implicit Flow, Direct Grants, or Client Grants.
-
-/realms/{realm-name}/protocol/openid-connect/token::
-  Used by the Authorization Code Flow to convert a temporary code into a token.
-
-/realms/{realm-name}/protocol/openid-connect/logout::
-  Used for performing logouts.
-
-/realms/{realm-name}/protocol/openid-connect/userinfo::
-  Used for the User Info service described in the OIDC specification.
-
-/realms/{realm-name}/protocol/openid-connect/revoke::
-  Used for OAuth 2.0 Token Revocation described in https://tools.ietf.org/html/rfc7009[RFC7009].
