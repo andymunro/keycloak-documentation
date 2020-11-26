@@ -1,10 +1,7 @@
 
 === Master Realm Access Control
 
-The `master` realm in {project_name} is a special realm and treated differently than other realms.
-Users in the {project_name} `master` realm can be granted permission to manage zero or more realms that are deployed on the {project_name} server.
-When a realm is created, {project_name} automatically creates various roles that grant fine-grain permissions to access that new realm.
-Access to The Admin Console and Admin REST endpoints can be controlled by mapping these roles to users in the `master` realm.
+The `master` realm in {project_name} is a special realm, different from other realms. Users in the {project_name} `master` realm can be granted permission to manage multiple realms that are deployed on the {project_name} server. When a realm is created, {project_name} automatically creates various roles that grant fine-grain permissions to access that new realm. Access to The Admin Console and Admin REST endpoints can be controlled by mapping these roles to users in the `master` realm.
 It's possible to create multiple super users,  as well as users that can only manage specific realms.
 
 ==== Global Roles
@@ -43,6 +40,3 @@ The roles available are:
 Assign the roles you want to your users and they will only be able to use that specific part of the administration console.
 
 IMPORTANT: Admins with the `manage-users` role will only be able to assign admin roles to users that they themselves have.  So, if an admin has the `manage-users` role but doesn't have the `manage-realm` role, they will not be able to assign this role.
-
-
-
