@@ -3,12 +3,11 @@
 
 The `master` realm in {project_name} is a special realm. Users in the {project_name} `master` realm can manage multiple realms on the {project_name} server. {project_name} automatically creates roles that grant specific permissions to access the new realm, upon realm creation. Access to the Admin Console and Admin REST endpoints is controlled by mapping the roles to users in the `master` realm. Mapping roles to users in the `master` realm controls access to the Admin Console and Admin REST endpoints.
 
-It is possible to create multiple super users and users that can manage specific realms only.
+{project_name} can create multiple super users and users that can manage specific realms only.
 
 ==== Global Roles
 
-There are two realm-level roles in the `master` realm.
-These are:
+Two realm-level roles exist in the `master` realm.
 
 * admin
 * create-realm        

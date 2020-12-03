@@ -209,7 +209,7 @@ image:{project_images}/fine-grain-add-view-leads.png[]
 
 ===== Per Client map-roles Shortcut
 
-A short way to do this is to grant access to the `map-roles` to an admin. Admins can then map any role defined by the client.
+A short way to map roles is to grant access to the `map-roles` to an admin. Admins can then map any role defined by the client.
 +
 .Client map-roles Permission
 image:{project_images}/fine-grain-client-permissions-tab-on.png[]
@@ -245,7 +245,7 @@ Policies covering the viewing and management of client's configuration.
 ====
 Privileges can be leaked unintentionally using this policy. For example, an admin can define a protocol mapper that hardcodes roles even when the admin does not have privileges to map roles to the client's scope. 
 
-This is currently a limitation of protocol mappers. They cannot assign individual permissions as roles do.
+This issue is currently a limitation of protocol mappers. They cannot assign individual permissions as roles do.
 ====
 
 ====== configure
@@ -256,13 +256,13 @@ A reduced set of privileges for client management.  It is similar to the `manage
 * Change the client's scope.
 
 ====== map-roles
-Policies covering if admins can map a role defined by the client to a user. This is a shortcut feature that avoids defining policies for each client defined role.
+Policies covering if admins can map a role defined by the client to a user. This feature avoids defining policies for each client defined role.
 
 ====== map-roles-composite
-Policies covering if admins can map a role defined by the client as a composite to another role. This is a shortcut feature that avoids defining policies for each client defined role.
+Policies covering if admins can map a role defined by the client as a composite to another role. This feature avoids defining policies for each client defined role.
 
 ====== map-roles-client-scope::
-Policies covering if admins can map a role defined by the client to the scope of another client. This is a shortcut feature that avoids defining policies for each client defined role.
+Policies covering if admins can map a role defined by the client to the scope of another client. This feature avoids defining policies for each client defined role.
 
 [[_users-permissions]]
 ===== Users
@@ -276,7 +276,7 @@ Policies covering if admins can view all users in the realm.
 Policies covering if admins can manage users in the realm. This permission grants admins the privilege to perform user role mappings. It does not specify the roles the admin can map. You must define the privilege for each role the admin can map.
 
 ===== map-roles
-A subset of the privileges granted by the `manage` scope. In this case the ability to map roles. The admin cannot perform any other user management operation. This is similar to the `manage` role. When dealing with client roles, the roles the admin applies must be specified per role, or set of roles.
+A subset of the privileges granted by the `manage` scope. In this case the ability to map roles. The admin cannot perform any other user management operation. This role is similar to the `manage` role. When dealing with client roles, the roles the admin applies must be specified per role, or set of roles.
 
 ===== manage-group-membership
 This permissions type is similar to `map-roles` but covers group membership. These policies grant the admin permission to manage group membership but not the groups the admin is allowed to manage membership for. You must specify policies for each group's `manage-members` permission.
