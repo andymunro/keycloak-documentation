@@ -64,7 +64,7 @@ image:{project_images}/fine-grain-client-permissions-tab-on.png[]
 
 Enabling *Permissions Enabled* initializes permission objects using link:{authorizationguide_link}[Authorization Services]. All authorization objects are contained in the `realm-management` client's `Authorization` tab.
 
-In this example, we are creating a `User Policy` for the `manage` permission. Upon initialization, the `manage` permission has no policies associated with it. We must create these policies.
+In this example, we are creating a `User Policy` for the `manage` permission. Upon initialization, the `manage` permission has no policies associated with it. Create these policies.
 
 .Procedure
 . Click the `manage` permission. 
@@ -111,11 +111,9 @@ The `sales-admin` user now has permission to manage the `sales-application` clie
 .Assign query-clients
 image:{project_images}/fine-grain-assign-query-clients.png[]
 
-The `query-clients` role must be assigned to `sales-admin` so the Admin Console renders client menus for the `sales-admin` user.
-
 [IMPORTANT]
 ====
-If the `query-clients` role is unset, restricted admins do not see any menu options when they log into the Admin Console.
+The `query-clients` role must be assigned to `sales-admin` so the Admin Console renders client menus for the `sales-admin` user. If the `query-clients` role is unset, restricted admins do not see any menu options when they log into the Admin Console.
 ====
 
 To test this:
@@ -169,7 +167,7 @@ image:{project_images}/fine-grain-map-roles-permission.png[]
 . Select `Sales-app-admin`.
 . Click *Save*.
 
-The `sales-admin` user can now map the `viewleads` role to other users. Next, we must specify the users the `sales-admin` can map the role to.
+The `sales-admin` user can now map the `viewleads` role to other users. Next, we specify the users the `sales-admin` can map the role to.
 
 .Procedure
 . Click *Users* in the menu.
@@ -223,7 +221,7 @@ This chapter defines the list of permission types that can be described for a re
 The `Permissions` tab for each role lists the following permission types.
 
 ====== map-role
-Controls an admin mapping this role to a user. `map-role` policies specify that the role can be mapped to a user only. `map-role` policies do not specify that an admin can perform user role mapping tasks.  The admin must also have manage or role mapping permissions.  See <<_users-permissions, Users Permissions>> for more information.
+Controls an admin mapping this role to a user. `map-role` policies specify that the role can be mapped to a user only. `map-role` policies do not specify that an admin can perform user role mapping tasks.  The admin must have manage or role mapping permissions also.  See <<_users-permissions, Users Permissions>> for more information.
 
 ====== map-role-composite
 Controls an admin mapping this role as a composite to another role. An admin can define client roles if the client manages permissions for that client. An admin cannot add composites to those roles unless the admin has `map-role-composite` privileges for the role he wants to add as a composite.
@@ -273,13 +271,13 @@ Each user `Permissions` tab lists the following permission types.
 Policies covering if admins can view all users in the realm.
 
 ===== manage
-Policies covering if admins can manage users in the realm. This permission grants admins the privilege to perform user role mappings. It does not specify the roles the admin can map. You must define the privilege for each role the admin can map.
+Policies covering if admins can manage users in the realm. This permission grants admins the privilege to perform user role mappings. It does not specify the roles the admin can map. Define the privilege for each role the admin can map.
 
 ===== map-roles
-A subset of the privileges granted by the `manage` scope. In this case the ability to map roles. The admin cannot perform any other user management operation. This role is similar to the `manage` role. When dealing with client roles, the roles the admin applies must be specified per role, or set of roles.
+A subset of the privileges granted by the `manage` scope. In this case the ability to map roles. The admin cannot perform any other user management operation. This role is similar to the `manage` role. For client roles, the roles the admin applies must be specified per role, or set of roles.
 
 ===== manage-group-membership
-This permissions type is similar to `map-roles` but covers group membership. These policies grant the admin permission to manage group membership but not the groups the admin is allowed to manage membership for. You must specify policies for each group's `manage-members` permission.
+This permissions type is similar to `map-roles` but covers group membership. These policies grant the admin permission to manage group membership but not the groups the admin is allowed to manage membership for. Specify policies for each group's `manage-members` permission.
 
 ===== impersonate
 Policies covering if an admin can impersonate other users. These policies apply to the admin's attributes and role mappings.
