@@ -1,9 +1,9 @@
 
 === Master Realm Access Control
 
-The `master` realm in {project_name} is a special realm. Users in the {project_name} `master` realm can get permission to manage multiple realms on the {project_name} server. When a realm is created, {project_name} automatically creates roles that grant specific permissions to access the new realm. Access to the Admin Console and Admin REST endpoints are controlled by mapping the roles to users in the `master` realm.
+The `master` realm in {project_name} is a special realm. Users in the {project_name} `master` realm can manage multiple realms on the {project_name} server. {project_name} automatically creates roles that grant specific permissions to access the new realm, upon realm creation. Access to the Admin Console and Admin REST endpoints is controlled by mapping the roles to users in the `master` realm. Mapping roles to users in the `master` realm controls access to the Admin Console and Admin REST endpoints.
 
-It is possible to create multiple super users, as well as users that can manage specific realms only.
+It is possible to create multiple super users and users that can manage specific realms only.
 
 ==== Global Roles
 
@@ -13,7 +13,7 @@ These are:
 * admin
 * create-realm        
 
-Users with the `admin` role are super users and have access to manage any realm on the server. Users with the `create-realm` role can create new realms. The user is granted full access to any new realm they create.
+Users with the `admin` role are super users and have access to manage any realm on the server. Users with the `create-realm` role can create new realms and these users have full access to any new realm they create.
 
 ==== Realm Specific Roles
 
@@ -35,9 +35,9 @@ The roles available are:
 * manage-identity-providers
 * impersonation
 
-Users with these roles will be able to use that specific part of the administration console only.
+Users with these roles can use that specific part of the administration console only.
 
 [NOTE]
 ====
-Admins with the `manage-users` role can assign admin roles to users that only they themselves have. For example, if an admin has the `manage-users` role but does not have the `manage-realm` role, they will be unable to assign the `manage-realm` role to other users.
+Admins with the `manage-users` role can assign admin roles to users that only admins with the `manage-users` role have. For example, if an admin has the `manage-users` role but does not have the `manage-realm` role, they will be unable to assign the `manage-realm` role to other users.
 ====
