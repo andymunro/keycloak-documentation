@@ -1,19 +1,12 @@
 [id="ref-saml-vs-oidc_{context}"]
 
-<<<<<<< HEAD:server_admin/topics/sso-protocols/saml-vs-oidc.adoc
-=== OpenID Connect compared to SAML
-
-=======
 === OpenID Connect vs. SAML
 [role="_abstract"]
->>>>>>> Modularization:server_admin/topics/sso-protocols/ref-saml-vs-oidc.adoc
 The following lists a number of factors to consider when choosing a protocol.
 
-<<<<<<< HEAD
 For most purposes, {project_name} recommends using OIDC.
-=======
+
 *OIDC*
->>>>>>> KEYCLOAK-16234 initial commit
 
 * OIDC is specifically designed to work with the web.  
 * OIDC is suited for HTML5/JavaScript applications because it is easier to implement on the client side than SAML.

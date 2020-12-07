@@ -25,7 +25,7 @@ A system is vulnerable to a stolen token for the lifetime of that token. For sec
 
 [[_confidential-clients]]
 _Confidential_ clients provide client secrets when they exchange the temporary codes for tokens. _Public_ clients are not required to provide client secrets.
-_Public_ clients are secure when HTTPS is strictly enforced and redirect URIs registered for the client are strictly controlled.  HTML5/JavaScript clients have to be _public_ clients because there is no way to securely transmit the client secret to HTML5/JavaScript clients. For more details, see the xref:assembly-managing-clients_{context}[Managing Clients] chapter.
+_Public_ clients are secure when HTTPS is strictly enforced and redirect URIs registered for the client are strictly controlled.  HTML5/JavaScript clients have to be _public_ clients because there is no way to securely transmit the client secret to HTML5/JavaScript clients. For more details, see the <<_clients, Managing Clients>> chapter.
 
 {project_name} also supports the https://tools.ietf.org/html/rfc7636[Proof Key for Code Exchange] specification.
 
