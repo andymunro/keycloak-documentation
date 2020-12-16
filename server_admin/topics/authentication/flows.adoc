@@ -2,18 +2,18 @@
 
 === Authentication Flows
 
-An _authentication flow_ is a container for all authentications, screens, and actions that must happen during login, registration, and other
-{project_name} workflows.
-If you go to the admin console `Authentication` left menu item and go to the `Flows` tab, you can view all the defined flows
-in the system and what actions and checks each flow requires.
+An _authentication flow_ is a container of authentications, screens, and actions that occur during login, registration, and other {project_name} workflows.
+To view all defined flows and the actions and checks each flow requires:
+
+.Procedure
+. Click *Authentication* in the menu.
+. Click the *FLows* tab.
 
 ==== Built-in flows
 
-{project_name} comes with a certain number of built-in flows. These flows cannot be modified, but the requirements can be modified to
-suit your needs.
+{project_name} has several built-in flows. It is not possible to modify these flows, but it is possible to modify the requirements of the flows to suit your needs.
 
-This section does a walk-through of the built-in browser login flow.  In the
-left drop-down list select `browser` to come to the screen shown below:
+This section does a walk-through of the built-in browser login flow.  In the left drop-down list select `browser` to come to the screen shown below:
 
 .Browser Flow
 image:{project_images}/browser-flow.png[]
