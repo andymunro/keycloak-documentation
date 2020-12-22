@@ -213,7 +213,7 @@ If the user selects the `Try another way` link with "WebAuthn passwordless" auth
 
 [NOTE]
 ====
-Since the WebAuthn Passwordless execution is set to _Alternative_ instead of _Required_, this flow will never ask the user to register a WebAuthn credential. For a user to have a Webauthn credential, an administrator must add a required action to the user. This is done by:
+Since the WebAuthn Passwordless execution is set to _Alternative_ rather than  _Required_, this flow will never ask the user to register a WebAuthn credential. For a user to have a Webauthn credential, an administrator must add a required action to the user. Do this by:
 
 . Enabling the `Webauthn Register Passwordless` required action in the realm (see the <<_webauthn,WebAuthn>> documentation).
 . Setting the required action using the `Credential Reset` part of a user's xref:ref-user-credentials_{context}[Credentials] management menu.
