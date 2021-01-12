@@ -1,7 +1,3 @@
-// Module included in the following assemblies:
-//
-// con-required-actions.adoc
-
 [id="proc-setting-required-actions_{context}"]
 = Setting required actions for one user
 
