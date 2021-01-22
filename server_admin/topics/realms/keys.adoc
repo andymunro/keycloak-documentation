@@ -2,7 +2,7 @@
 [[realm_keys]]
 === Realm Keys
 
-{project_name}'s authentication protocols require cryptographic signatures and, in some cases, encryption.  {project_name} implements asymmetric key pairs (a private and public key) to do this.
+{project_name}'s authentication protocols require cryptographic signatures and, in some cases, encryption.  {project_name} implements asymmetric key pairs (a private and public key) to address this situation.
 
 When {project_name} creates a realm, a key pair and a self-signed certificate are automatically generated. {project_name} realms have a single active key pair but can have multiple passive keys as well. {project_name} uses the active key pair to create new signatures and the passive key pairs to verify previous signatures. Using this method, {project_name} regularly rotates keys without downtime or interruption to users.
 
@@ -10,10 +10,10 @@ To view the active keys for a realm, perform the following:
 
 .Procedure
 . Select the realm in the admin console.
-. Click `Realm settings`.
-. Click `Keys`. 
-. Click `Passive` to view passive keys.
-. Click `Disabled` to view disabled keys.
+. Click *Realm settings*.
+. Click *Keys*.
+. Click *Passive* to view passive keys.
+. Click *Disabled* to view disabled keys.
 
 The status of a key pair can be `Active` but still unselected as the currently active key pair for the realm. {project_name} selects the active key pair used for signatures based on the first key provider, sorted by priority, that can provide an active key pair.
 
@@ -22,7 +22,7 @@ The status of a key pair can be `Active` but still unselected as the currently a
 Rotate keys regularly by:
 
 * Creating new keys with a higher priority than the existing active keys or
-* Create new keys with the same priority and make the previous keys passive.
+* Creating new keys with the same priority and making the previous keys passive.
 
 When new keys are available, {project_name} signs new tokens and cookies with the new keys. When users authenticate an application, {project_name} updates the SSO cookie with the new signature. When {project_name} refreshes OpenID Connect tokens, the new tokens are signed with the new keys. Over time, all cookies and tokens use the new keys and eventually, all old keys can be removed. 
 
@@ -34,10 +34,10 @@ To add a new generated key pair:
 
 .Procedure
 . Select the realm in the admin console.
-. Click `Realm settings`.
-. Click the `Keys` tab.
-. Click the 'Providers' tab.
-. Click `Add keystore` and select `rsa-generated`. 
+. Click *Realm settings*.
+. Click the *Keys* tab.
+. Click the *Providers* tab.
+. Click *Add keystore* and select `rsa-generated`. 
 . Enter a number in the `Priority` field. This number determines if the new key pair becomes the active key pair.
 . Select a value for `keysize`.
 . Click *Save*.
@@ -55,12 +55,12 @@ To add a key pair and certificate generated outside of {project_name}:
 
 .Procedure
 . Select the realm in the admin console.
-. Click `Realm settings`.
-. Click the `Keys` tab.
-. Click the 'Providers' tab.
-. Click `Add keystore` and select `rsa`. 
-. Enter a number in the `Priority` field. This number determines if the new key pair becomes the active key pair.
-. Click *Select file* beside `Private RSA Key` to upload the private key file.
+. Click *Realm settings*.
+. Click the *Keys* tab.
+. Click the *Providers* tab.
+. Click *Add keystore* and select *rsa*. 
+. Enter a number in the *Priority* field. This number determines if the new key pair becomes the active key pair.
+. Click *Select file* beside *Private RSA Key* to upload the private key file.
 . If you have a signed certificate for your private key,  click *Select file* beside `X509 Certificate` to upload the certificate file. {project_name} autmatically generates a self-signed certificate if you do not upload a certificate.
 . Click *Save*.
 
@@ -70,10 +70,10 @@ To add a key pair and certificate stored in a Java Keystore file:
 
 .Procedure
 . Select the realm in the admin console.
-. Click `Realm settings`.
-. Click the `Keys` tab.
-. Click the 'Providers' tab.
-. Click `Add keystore` and select `java-keystore`. 
+. Click *Realm settings*.
+. Click the *Keys* tab.
+. Click the *Providers* tab.
+. Click *Add keystore* and select `java-keystore`. 
 . Enter a number in the `Priority` field. This number determines if the new key pair becomes the active key pair.
 . Enter a value for `Keystore`.
 . Enter a value for `Keystore Password`.
@@ -85,9 +85,9 @@ To add a key pair and certificate stored in a Java Keystore file:
 
 .Procedure
 . Select the realm in the admin console.
-. Click `Realm settings`.
-. Click the `Keys` tab.
-. Click the 'Active' tab.
+. Click Realm settings.
+. Click the *Keys* tab.
+. Click the *Active* tab.
 . Click the provider of the key you want to make passive.
 . Toggle *Active* to *OFF*.
 . Click *Save*.
@@ -96,9 +96,9 @@ To add a key pair and certificate stored in a Java Keystore file:
 
 .Procedure
 . Select the realm in the admin console.
-. Click `Realm settings`.
-. Click the `Keys` tab.
-. Click the 'Active' tab.
+. Click Realm settings.
+. Click the *Keys* tab.
+. Click the *Active* tab.
 . Click the provider of the key you want to make passive.
 . Toggle *Enabled* to *OFF*.
 . Click *Save*.
@@ -111,8 +111,8 @@ To ensure that client applications do not accept the tokens signed by compromise
 
 .Procedure
 . Click *Clients* in the menu.
-. Click `security-admin-console`.
-. Click the `Revocation` tab.
+. Click *security-admin-console*.
+. Click the *Revocation* tab.
 . Click *Set to now*.
 . Click *Push*.
 

@@ -16,7 +16,7 @@ Users with the `admin` role are super users and have access to manage any realm 
 
 ==== Realm Specific Roles
 
-It is possible to grant management privileges, for multiple realms in the system, to admin users within the `master` realm.
+You can grant management privileges, for multiple realms in the system, to admin users within the `master` realm.
 Each realm in {project_name} is represented by a client in the `master` realm. The format of the name of the client is `<realm name>-realm`. These clients have client-level roles which define various level of access for managing an individual realm.
 
 The roles available are: 
@@ -34,9 +34,9 @@ The roles available are:
 * manage-identity-providers
 * impersonation
 
-Users with these roles can use that specific part of the administration console only.
+Users with these roles can use that specific part of the Admin Console only.
 
 [NOTE]
 ====
-Admins with the `manage-users` role can assign admin roles to users that only admins with the `manage-users` role have. For example, if an admin has the `manage-users` role but does not have the `manage-realm` role, they will be unable to assign the `manage-realm` role to other users.
+Administrators with the `manage-users` role can assign admin roles to users that only administrators with the `manage-users` role have. For example, if an administrator has the `manage-users` role but does not have the `manage-realm` role, they will be unable to assign the `manage-realm` role to other users.
 ====
