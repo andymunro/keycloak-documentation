@@ -28,6 +28,7 @@ When new keys are available, {project_name} signs new tokens and cookies with th
 
 Applications using offline refresh tokens must refresh the tokens before old keys are removed.
 
+[[adding-a-generated-key-pair]]
 ==== Adding a generated key pair
 
 To add a new generated key pair:
