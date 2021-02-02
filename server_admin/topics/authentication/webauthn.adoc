@@ -34,37 +34,37 @@ The setup procedure of WebAuthn support for 2FA is the following :
 . Click *Authentication* in the menu.
 . Click the *Required Actions* tab.
 . Click *Register*.
-. Click the `Required Action` drop-down list.
-. Click `Webauthn Register`.
+. Click the *Required Action* drop-down list.
+. Click *Webauthn Register*.
 . Click *Ok*.
 
-Mark the `Default Action` checkbox if you want all newly created users to be required to register their WebAuthn credentials.
+Mark the *Default Action* checkbox if you want all newly created users to be required to register their WebAuthn credentials.
 
 [[_webauthn-authenticator-setup]]
 ===== Adding WebAuthn Authentication to a Browser Flow
 
 . Click *Authentication* in the menu.
-. Click the `Browser` flow.
-. Click *Copy* to make a copy of the built-in `Browser` flow.
+. Click the *Browser* flow.
+. Click *Copy* to make a copy of the built-in *Browser* flow.
 . Enter a name for the copy.
 . Click *Ok*.
-. Click on the _Actions_ link for `WebAuthn Browser Browser - Conditional OTP` and click _Delete_.
+. Click on the _Actions_ link for *WebAuthn Browser Browser - Conditional OTP* and click _Delete_.
 . Click *Delete*.
 
 If you require WebAuthn for all users:
 
-. Click on the _Actions_ link for `WebAuthn Browser Forms`.
+. Click on the _Actions_ link for *WebAuthn Browser Forms*.
 . Click *Add execution*.
-. Click the `Provider` drop-down list.
-. Click `WebAuthn Authenticator`.
+. Click the *Provider* drop-down list.
+. Click *WebAuthn Authenticator*.
 . Click *Save*.
-. Click _REQUIRED_ for `WebAuthn Authenticator`
+. Click _REQUIRED_ for *WebAuthn Authenticator*
 +
 image:images/webauthn-browser-flow-required.png[]
 +
 . Click the *Bindings* tab.
-. Click the `Browser Flow` drop-down list.
-. Click `WebAuthn Browser`.
+. Click the *Browser Flow* drop-down list.
+. Click *WebAuthn Browser*.
 . Click *Save*.
 
 [NOTE]
@@ -72,38 +72,38 @@ image:images/webauthn-browser-flow-required.png[]
 If a user does not have WebAuthn credentials, the user must register WebAuthn credentials.
 ====
 
-Users can log in with WebAuthn if they have a WebAuthn credential registered only. So instead of adding the `WebAuthn Authenticator` execution, you can:
+Users can log in with WebAuthn if they have a WebAuthn credential registered only. So instead of adding the *WebAuthn Authenticator* execution, you can:
 
 .Procedure
-. Click on the _Actions_ link for `WebAuthn Browser Forms`.
-. Click `Add flow`.
+. Click on the _Actions_ link for *WebAuthn Browser Forms*.
+. Click *Add flow*.
 . Enter "Conditional 2FA" for the _Alias_ field.
 . Click *Save*.
-. Click _CONDITIONAL_ for `Conditional 2FA`
-. Click on the _Actions_ link for `Conditional 2FA`.
+. Click _CONDITIONAL_ for *Conditional 2FA*
+. Click on the _Actions_ link for *Conditional 2FA*.
 . Click *Add execution*.
-. Click the `Provider` drop-down list.
-. Click `Condition - User Configured`.
+. Click the *Provider* drop-down list.
+. Click *Condition - User Configured*.
 . Click *Save*.
-. Click _REQUIRED_ for `Conditional 2FA`
-. Click on the _Actions_ link for `Conditional 2FA`.
+. Click _REQUIRED_ for *Conditional 2FA*
+. Click on the _Actions_ link for *Conditional 2FA*.
 . Click *Add execution*.
-. Click the `Provider` drop-down list.
-. Click `WebAuthn Authenticator`.
+. Click the *Provider* drop-down list.
+. Click *WebAuthn Authenticator*.
 . Click *Save*.
-. Click _ALTERNATIVE_ for `Conditional 2FA`
+. Click _ALTERNATIVE_ for *Conditional 2FA*
 +
 image:images/webauthn-browser-flow-conditional.png[]
 
 The user can choose between using WebAuthn and OTP for the second factor:
 
 .Procedure
-. Click on the _Actions_ link for `Conditional 2FA`.
+. Click on the _Actions_ link for *Conditional 2FA*.
 . Click *Add execution*.
-. Click the `Provider` drop-down list.
-. Click `ITP Form`.
+. Click the *Provider* drop-down list.
+. Click *ITP Form*.
 . Click *Save*.
-. Click _ALTERNATIVE_ for `Conditional 2FA`
+. Click _ALTERNATIVE_ for *Conditional 2FA*
 +
 image:images/webauthn-browser-flow-conditional-with-OTP.png[]
 
@@ -120,15 +120,15 @@ After registering a WebAuthn authenticator, the user carries out the following o
 
 {project_name} manages WebAuthn credentials similarly to other credentials from xref:ref-user-credentials_{context}[User credential management]:
 
-* {project_name} assigns users a required action to create a WebAuthn credential from the `Reset Actions` list and select `Webauthn Register`.
-* Administrators can delete a WebAuthn credential by clicking `Delete`.
-* Administrators can view the credential's data, such as the AAGUID, by selecting `Show data...`.
-* Administrators can set a label for the credential by setting a value in the `User Label` field and saving the data.
+* {project_name} assigns users a required action to create a WebAuthn credential from the *Reset Actions* list and select *Webauthn Register*.
+* Administrators can delete a WebAuthn credential by clicking *Delete*.
+* Administrators can view the credential's data, such as the AAGUID, by selecting *Show data...*.
+* Administrators can set a label for the credential by setting a value in the *User Label* field and saving the data.
 
 [[_webauthn-policy]]
 ===== Managing Policy
 
-Administrators can configure WebAuthn related operations as `WebAuthn Policy` per realm.
+Administrators can configure WebAuthn related operations as *WebAuthn Policy* per realm.
 
 .Procedure
 . Click *Authentication* in the menu.
@@ -188,20 +188,20 @@ The appropriate method to register a WebAuthn authenticator depends on whether t
 
 ===== New user
 
-If the `WebAuthn Register` required action is `Default Action` in a realm, new users must set up the WebAuthn security key after their first login. 
+If the *WebAuthn Register* required action is *Default Action* in a realm, new users must set up the WebAuthn security key after their first login. 
 
 .Procedure
 
 . Open the login form.
-. Click `Register`.
+. Click *Register*.
 . Fill in the items on the form.
-. Click `Register`.
+. Click *Register*.
 
 After successfully registering, the browser asks the user to enter the text of their WebAuthn authenticator's label.
 
 ===== Existing user
 
-If you have activated the `WebAuthn Authenticator`, existing users must register their WebAuthn authenticator when they attempt to log in.
+If you have activated the *WebAuthn Authenticator*, existing users must register their WebAuthn authenticator when they attempt to log in.
 
 .Procedure
 . Open the login form.
@@ -213,7 +213,7 @@ After successful registration, the user's browser asks the user to enter the tex
 
 ==== Passwordless WebAuthn together with Two-Factor
 
-{project_name} uses WebAuthn for two-factor authentication, but it is possible to use WebAuthn as the first-factor authentication. In this case, users with `passwordless` WebAuthn credentials can  authenticate to {project_name} without a password. {project_name} can use WebAuthn as both the passwordless and two-factor authentication mechanism in the context of a realm and a single authentication flow.
+{project_name} uses WebAuthn for two-factor authentication, but it is possible to use WebAuthn as the first-factor authentication. In this case, users with `passwordless` WebAuthn credentials can authenticate to {project_name} without a password. {project_name} can use WebAuthn as both the passwordless and two-factor authentication mechanism in the context of a realm and a single authentication flow.
 
 An administrator typically requires that Security Keys registered by users for the WebAuthn passwordless authentication meet different requirements. For example, the security keys may require users to authenticate to the security key using a PIN, or the security key attests with a stronger certificate authority.
 
@@ -225,20 +225,20 @@ Set up WebAuthn passwordless support as follows:
 
 . Register new required action for WebAuthn passwordless support. Use the steps described in <<_webauthn-register, Enable WebAuthn Authenticator Registration>>. You must register the `Webauthn Register Passwordless` action.
 
-. Configure the policy. You can use steps and configuration options described in <<_webauthn-policy, Managing Policy>>. You must perform the configuration in the admin console in the tab `WebAuthn Passwordless Policy`. Typically the requirements for the security key will be stronger than for the two-factor policy. For example, you can set the `User Verification Requirement` to `Required` when you configure the passwordless policy.
+. Configure the policy. You can use steps and configuration options described in <<_webauthn-policy, Managing Policy>>. You must perform the configuration in the admin console in the tab *WebAuthn Passwordless Policy*. Typically the requirements for the security key will be stronger than for the two-factor policy. For example, you can set the *User Verification Requirement* to *Required* when you configure the passwordless policy.
 
-. Configure the authentication flow. Use the `WebAuthn Browser` flow described in <<_webauthn-authenticator-setup, Adding WebAuthn Authentication to a Browser Flow>>. Configure the flow as follows:
+. Configure the authentication flow. Use the *WebAuthn Browser* flow described in <<_webauthn-authenticator-setup, Adding WebAuthn Authentication to a Browser Flow>>. Configure the flow as follows:
 +
-** The `WebAuthn Browser Forms` subflow contains `Username Form` as the first authenticator. Delete the default `Username Password Form` authenticator and add the `Username Form` authenticator. This action requires the user to provide their username as the first step.
+** The *WebAuthn Browser Forms* subflow contains *Username Form* as the first authenticator. Delete the default *Username Password Form* authenticator and add the *Username Form* authenticator. This action requires the user to provide their username as the first step.
 +
-** There will be a required subflow, which can be named `Passwordless Or Two-factor`, for example. This subflow indicates the user can authenticate with Passwordless WebAuthn credential or with Two-factor authentication.
+** There will be a required subflow, which can be named *Passwordless Or Two-factor*, for example. This subflow indicates the user can authenticate with Passwordless WebAuthn credential or with Two-factor authentication.
 +
-** The flow contains `WebAuthn Passwordless Authenticator` as the first alternative.
+** The flow contains *WebAuthn Passwordless Authenticator* as the first alternative.
 +
-** The second alternative will be a subflow named `Password And Two-factor Webauthn`, for example. This subflow contains a `Password Form` and a `WebAuthn Authenticator`.
+** The second alternative will be a subflow named *Password And Two-factor Webauthn*, for example. This subflow contains a *Password Form* and a *WebAuthn Authenticator*.
 
 The final configuration of the flow looks similar to this:
 
 image:images/webauthn-passwordless-flow.png[]
 
-You can now add `WebAuthn Register Passwordless` as the required action to a user, already known to {project_name}, to test this. During the first authentication, the user must use the password and second-factor WebAuthn credential. The user does not need to provide the password and second-factor WebAuthn credential if they use their WebAuthn Passwordless credential.
+You can now add *WebAuthn Register Passwordless* as the required action to a user, already known to {project_name}, to test this. During the first authentication, the user must use the password and second-factor WebAuthn credential. The user does not need to provide the password and second-factor WebAuthn credential if they use their WebAuthn Passwordless credential.

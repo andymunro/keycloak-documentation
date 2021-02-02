@@ -53,7 +53,7 @@ The certificate identity mapping can map the extracted user identity to an exist
 
 [IMPORTANT]
 ====
-* If you disable `Login with email` at realm settings, the same rules apply to certificate authentication. Users are unable to log in by using the email attribute.
+* If you disable *Login with email* at realm settings, the same rules apply to certificate authentication. Users are unable to log in by using the email attribute.
 * Using `Certificate Serial Number and IssuerDN` as an identity source requires two custom attributes for the serial number and the IssuerDN.
 * `SHA-256 Certificate thumbprint` is the lowercase hexadecimal representation of SHA-256 certificate thumbprint.
 * Using `Full certificate in PEM format` as an identity source is limited to the custom attributes mapped to external federation sources, such as LDAP. {project_name} cannot store certificates in its database due to length limitations, so in the case of LDAP, you must enable `Always Read Value From LDAP`.
@@ -149,8 +149,8 @@ See link:https://docs.wildfly.org/19/Admin_Guide.html#https-listener[HTTPS Liste
 This value must match the name of the realm from the previous section.
 
 `https-listener/verify-client`::
-If set to `REQUESTED`, the server optionally asks for a client certificate. 
-If set to `REQUIRED`, the server refuses inbound connections if no client certificate has been provided.
+If set to *REQUESTED*, the server optionally asks for a client certificate. 
+If set to *REQUIRED*, the server refuses inbound connections if no client certificate has been provided.
 
 [[_browser_flow]]
 ==== Adding X.509 Client Certificate Authentication to browser flows
@@ -165,65 +165,69 @@ If set to `REQUIRED`, the server refuses inbound connections if no client certif
 . Click "X509/Validate Username Form".
 . Click *Save*.
 +
-image:images/x509-execution.png[]
+.X509 Execution
+image:images/x509-execution.png[X509 Execution]
 +
 . Click the up/down arrow buttons to move the "X509/Validate Username Form" over the "Browser Forms" execution.
 . Set the requirement to "ALTERNATIVE".
 +
-image:images/x509-browser-flow.png[]
+.X509 Browser Flow
+image:images/x509-browser-flow.png[X509 Browser Flow]
 +
 . Click the *Bindings* tab.
-. Click the `Browser Flow` drop-down list.
+. Click the *Browser Flow* drop-down list.
 . Click the copy of the browser flow from the drop-down list. 
 . Click *Save*.
 +
-image:images/x509-browser-flow-bindings.png[]
+.X509 Browser Flow Bindings
+image:images/x509-browser-flow-bindings.png[X509 Browser Flow Bindings]
 
 ==== Configuring X.509 Client Certificate Authentication
 
-image:images/x509-configuration.png[]
+.X509 Configuration
+image:images/x509-configuration.png[X509 Configuration]
 
-`User Identity Source`::
+*User Identity Source*::
 Defines the method for extracting the user identity from a client certificate.
 
-`Canonical DN representation enabled`::
+*Canonical DN representation enabled*::
 Defines whether to use canonical format to determine a distinguished name. The official link:https://docs.oracle.com/javase/8/docs/api/javax/security/auth/x500/X500Principal.html#getName-java.lang.String-[Java API documentation] describes the format. This option affects the two User Identity Sources _Match SubjectDN using regular expression_ and _Match IssuerDN using regular expression_ only. Enable this option when you set up a new {project_name} instance. Disable this option to retain backward compatibility with existing {project_name} instances.
 
-`Enable Serial Number hexadecimal representation`::
+*Enable Serial Number hexadecimal representation*::
 Represent the link:https://tools.ietf.org/html/rfc5280#section-4.1.2.2[serial number] as hexadecimal. The serial number with the sign bit set to 1 must be left padded with 00 octet. For example, a serial number with decimal value _161_, or _a1_ in hexadecimal representation is encoded as _00a1_, according to RFC5280. See link:https://tools.ietf.org/html/rfc5280#appendix-B[RFC5280, appendix-B] for more details.
 
-`A regular expression`::
+*A regular expression*::
 A regular expression to use as a filter for extracting the certificate identity. The expression must contain a single group.
 
-`User Mapping Method`::
+*User Mapping Method*::
 Defines the method to match the certificate identity with an existing user. _Username or email_ searches for existing users by username or email. _Custom Attribute Mapper_ searches for existing users with a custom attribute that matches the certificate identity. The name of the custom attribute is configurable.
 
-`A name of user attribute`::
+*A name of user attribute*::
 A custom attribute whose value matches against the certificate identity. Use multiple custom attributes when attribute mapping is related to multiple values, For example,  'Certificate Serial Number and IssuerDN'.
 
-`CRL Checking Enabled`::
-Check the revocation status of the certificate by using the Certificate Revocation List. The location of the list is defined in the `CRL file path` attribute.
+*CRL Checking Enabled*::
+Check the revocation status of the certificate by using the Certificate Revocation List. The location of the list is defined in the *CRL file path* attribute.
 
-`Enable CRL Distribution Point to check certificate revocation status`::
+*Enable CRL Distribution Point to check certificate revocation status*::
 Use CDP to check the certificate revocation status. Most PKI authorities include CDP in their certificates.
 
-`CRL file path`::
-The path to a file containing a CRL list. The value must be a path to a valid file if the `CRL Checking Enabled` option is enabled.
+*CRL file path*::
+The path to a file containing a CRL list. The value must be a path to a valid file if the *CRL Checking Enabled* option is enabled.
 
-`OCSP Checking Enabled`::
+*OCSP Checking Enabled*::
 Checks the certificate revocation status by using Online Certificate Status Protocol.
 
-`OCSP Responder URI`::
+*OCSP Responder URI*::
 Override the value of the OCSP responder URI in the certificate.
 
-`Validate Key Usage`::
+*Validate Key Usage*::
 Verifies the certificate's KeyUsage extension bits are set. For example, "digitalSignature,KeyEncipherment" verifies if bits 0 and 2 in the KeyUsage extension are set. 
 Leave this parameter empty to disable the Key Usage validation. See link:https://tools.ietf.org/html/rfc5280#section-4.2.1.3[RFC5280, Section-4.2.1.3] for more information. {project_name} raises an error when a key usage mismatch occurs.
 
-`Validate Extended Key Usage`::
+*Validate Extended Key Usage*::
 Verifies one or more purposes defined in the Extended Key Usage extension. See link:https://tools.ietf.org/html/rfc5280#section-4.2.1.12[RFC5280, Section-4.2.1.12] for more information. Leave this parameter empty to disable the Extended Key Usage validation. {project_name} raises an error when flagged as critical by the issuing CA and a key usage extension mismatch occurs.
 
-`Bypass identity confirmation`::
+*Bypass identity confirmation*::
 If enabled, X.509 client certificate authentication does not prompt the user to confirm the certificate identity. {project_name} signs in the user upon successful authentication.
 
 ==== Adding X.509 Client Certificate Authentication to a Direct Grant Flow
@@ -233,23 +237,25 @@ If enabled, X.509 client certificate authentication does not prompt the user to 
 . Click *Copy* to make a copy of the "Direct Grant" flow.
 . Enter a name for the copy.
 . Click *Ok*.
-. Click on the _Actions_ link for "Username Validation" and click _Delete_.
+. Click on the *Actions* link for "Username Validation" and click *Delete*.
 . Click *Delete*.
-. Click on the _Actions_ link for "Password" and click _Delete_.
+. Click on the *Actions* link for "Password" and click *Delete*.
 . Click *Delete*.
 . Click *Add execution*.
 . Click "X509/Validate Username".
 . Click *Save*.
 +
-image:images/x509-directgrant-execution.png[]
+.X509 Direct Grant Execution
+image:images/x509-directgrant-execution.png[X509 Direct Grant Execution]
 +
 . Set up the x509 authentication configuration by following the steps described in the <<_browser_flow, x509 Browser Flow>> section.
 . Click the *Bindings* tab.
-. Click the `Direct Grant Flow` drop-down list.
+. Click the *Direct Grant Flow* drop-down list.
 . Click the newly created "x509 Direct Grant" flow.
 . Click *Save*.
 +
-image:images/x509-directgrant-flow-bindings.png[]
+.X509 Direct Grant Flow Bindings
+image:images/x509-directgrant-flow-bindings.png[X509 Direct Grant Flow Bindings]
 
 ==== Client certificate lookup
 

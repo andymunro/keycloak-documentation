@@ -1,3 +1,4 @@
+
 [[_kerberos]]
 
 === Kerberos
@@ -6,7 +7,7 @@
 
 A typical use case for web authentication is the following:
 
-. The user logs into their desktop.
+. The user logs into the desktop.
 . The user accesses a web application secured by {project_name} using a browser.
 . The application redirects to {project_name} login.
 . {project_name} renders HTML login screen with status 401 and HTTP header `WWW-Authenticate: Negotiate`
@@ -58,7 +59,7 @@ You must install a Kerberos client on your machine.
 . Install a Kerberos client. If your machine runs Fedora, Ubuntu, or RHEL, install the link:https://www.freeipa.org/page/Downloads[freeipa-client] package, containing a Kerberos client and other utilities.
 . Configure the Kerberos client (on Linux, the configuration settings are in the link:https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html`[/etc/krb5.conf] file ). 
 +
-You must add your Kerberos realm to the configuration and configure the HTTP domains your server runs on. 
+Add your Kerberos realm to the configuration and configure the HTTP domains your server runs on. 
 +
 For example, for the MYDOMAIN.ORG realm, you can configure the `domain_realm` section like this:
 +
@@ -75,12 +76,12 @@ For the MIT Kerberos example above, we exported keytab to the `/tmp/http.keytab`
 
 ===== Enabling SPNEGO Processing
 
-By default, {project_name} disables SPNEGO protocol support. To enable it, go to the <<_authentication-flows, browser flow>> and enable `Kerberos`.
+By default, {project_name} disables SPNEGO protocol support. To enable it, go to the <<_authentication-flows, browser flow>> and enable *Kerberos*.
 
 .Browser Flow
-image:{project_images}/browser-flow.png[]
+image:{project_images}/browser-flow.png[Browser Flow]
 
-Set the `Kerberos` requirement from _disabled_ to _alternative_ (Kerberos is optional) or _required_ (browser must have Kerberos enabled). If you have not configured the browser to work with SPNEGO or Kerberos, {project_name} falls back to the regular login screen.
+Set the *Kerberos* requirement from _disabled_ to _alternative_ (Kerberos is optional) or _required_ (browser must have Kerberos enabled). If you have not configured the browser to work with SPNEGO or Kerberos, {project_name} falls back to the regular login screen.
 
 ===== Configure Kerberos User Storage Federation Provider
 
@@ -92,22 +93,22 @@ To authenticate with Kerberos backed by an LDAP server, you must configure the <
 . Go to the configuration page for your LDAP provider.
 +
 .LDAP Kerberos Integration
-image:{project_images}/ldap-kerberos.png[]
+image:{project_images}/ldap-kerberos.png[LDAP Kerberos Integration]
 +
-. Toggle `Allow Kerberos authentication` to *ON* 
+. Toggle *Allow Kerberos authentication* to *ON* 
 
-`Allow Kerberos authentication` makes {project_name} use the Kerberos principal access user information so information can import into the {project_name} environment.
+*Allow Kerberos authentication* makes {project_name} use the Kerberos principal access user information so information can import into the {project_name} environment.
 
-If an LDAP server is not backing your Kerberos solution, you must use the `Kerberos` User Storage Federation Provider.
+If an LDAP server is not backing your Kerberos solution, you must use the *Kerberos* User Storage Federation Provider.
 
 .Procedure
-. Click the `User Federation` menu item.
-. Select `Kerberos` from the `Add provider` select box.
+. Click the *User Federation* menu item.
+. Select *Kerberos* from the *Add provider* select box.
 +
 .Kerberos User Storage Provider
-image:{project_images}/kerberos-provider.png[]
+image:{project_images}/kerberos-provider.png[Kerberos User Storage Provider]
 
-The `Kerberos` provider parses the Kerberos ticket for simple principal information and imports the information into the local {project_name} database.
+The *Kerberos* provider parses the Kerberos ticket for simple principal information and imports the information into the local {project_name} database.
 User profile information, such as first name, last name, and email, are not provisioned.
 
 ==== Setup and configuration of client machines
@@ -132,7 +133,7 @@ endif::[]
 
 ==== Credential Delegation
 
-Kerberos supports the credential delegation. Applications may need access to the Kerberos ticket so they can re-use it to interact with other services secured by Kerberos. Because the {project_name} server processed the SPNEGO protocol, you must propagate the GSS credential to your application within the OpenID Connect token claim or a SAML assertion attribute. {project_name} transmits this to your application from the {project_name} server. To insert this claim into the token or assertion, each application must enable the built-in protocol mapper `gss delegation credential`. This mapper is available in the `Mappers` tab of the application's client page.  See <<_protocol-mappers, Protocol Mappers>> chapter for more details.
+Kerberos supports the credential delegation. Applications may need access to the Kerberos ticket so they can re-use it to interact with other services secured by Kerberos. Because the {project_name} server processed the SPNEGO protocol, you must propagate the GSS credential to your application within the OpenID Connect token claim or a SAML assertion attribute. {project_name} transmits this to your application from the {project_name} server. To insert this claim into the token or assertion, each application must enable the built-in protocol mapper `gss delegation credential`. This mapper is available in the *Mappers* tab of the application's client page.  See <<_protocol-mappers, Protocol Mappers>> chapter for more details.
 
 Applications must deserialize the claim it receives from {project_name} before using it to make GSS calls against other services. When you deserialize the credential from the access token to the GSSCredential object, you must create the GSSContext with this credential passed to the `GSSManager.createContext` method. For example:
 
