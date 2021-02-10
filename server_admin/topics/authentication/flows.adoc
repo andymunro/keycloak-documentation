@@ -2,8 +2,8 @@
 
 === Authentication Flows
 
-An _authentication flow_ is a container of authentications, screens, and actions during login, registration, and other {project_name} workflows.
-To view all the flows, actions and checks each flow requires:
+An _authentication flow_ is a container of authentications, screens, and actions, during log in, registration, and other {project_name} workflows.
+To view all the flows, actions, and checks, each flow requires:
 
 .Procedure
 . Click *Authentication* in the menu.
@@ -11,7 +11,7 @@ To view all the flows, actions and checks each flow requires:
 
 ==== Built-in flows
 
-{project_name} has several built-in flows. It is not possible to modify these flows, but it is possible to alter the flow's requirements to suit your needs.
+{project_name} has several built-in flows. You cannot modify these flows, but you can alter the flow's requirements to suit your needs.
 
 In the drop-down list, select *browser* to display the Browser Flow screen.
 
@@ -33,7 +33,7 @@ This authenticator is disabled by default and is skipped during the Browser Flow
 
 . Identity Provider Redirector
 +
-This action is configured through the *Actions* > *Config*. It redirects to another IdP for <<_identity_broker, identity brokering>>.
+This action is configured through the *Actions* > *Config* link. It redirects to another IdP for <<_identity_broker, identity brokering>>.
 
 . Forms
 +
@@ -81,11 +81,11 @@ To create a flow, perform the following:
 
 .Procedure
 . Click *Authentication* in the menu.
-. Click the *New* button. 
+. Click *New*.
 
 [NOTE]
 ====
-It is possible to copy and then modify an existing flow. Select an existing flow, press the *Copy* button, and enter a name for the new flow.
+You can copy and then modify an existing flow. Select a flow, click *Copy*, and enter a name for the new flow.
 ====
 
 When creating a new flow, you must create a top-level flow first with the following options:
@@ -100,7 +100,7 @@ Top-Level Flow Type::
 .Create a top-level flow
 image:{project_images}/Create-top-level-flow.png[Top Level Flow]
 
-When {project_name} has created the flow, the *Delete*, *Add execution*, and *Add flow* button become available.
+When {project_name} has created the flow, {project_name} displays the *Delete*, *Add execution*, and *Add flow* buttons.
 
 .An empty new flow
 image:{project_images}/New-flow.png[New Flow]
@@ -111,8 +111,7 @@ Three factors determine the behavior of flows and sub-flows.
 * The executions within the flows
 * The requirements set within the sub-flows and the executions.
 
-Executions have a wide variety of actions, from sending a reset email to validating an OTP. Add executions with the *Add execution* button. If you hover over the
-question mark next to *Provider*, you see a description of the execution.
+Executions have a wide variety of actions, from sending a reset email to validating an OTP. Add executions with the *Add execution* button. Hover over the question mark next to *Provider*, to see a description of the execution.
 
 .Adding an authentication execution
 image:{project_images}/Create-authentication-execution.png[Adding an Authentication Execution]
@@ -120,7 +119,7 @@ image:{project_images}/Create-authentication-execution.png[Adding an Authenticat
 Two types of executions exist, _automatic executions_ and _interactive executions_. _Automatic executions_ are similar to the *Cookie* execution and will automatically
 perform their action in the flow. _Interactive executions_ halt the flow to get input. Executions executing successfully set their status to _success_.  For a flow to complete, it needs at least one execution with a status of _success_. 
 
-It is possible to add sub-flows to top-level flows with the *Add flow* button. The *Add flow* button opens the *Create Execution Flow* page. This page is similar to the *Create Top Level Form* page, the difference being that the *Flow Type* can be *generic* (default) or *form*. The *form* type constructs a sub-flow that generates a form for the user, similar to the built-in *Registration* flow.
+You can add sub-flows to top-level flows with the *Add flow* button. The *Add flow* button displays the *Create Execution Flow* page. This page is similar to the *Create Top Level Form* page, the difference is that the *Flow Type* can be *generic* (default) or *form*. The *form* type constructs a sub-flow that generates a form for the user, similar to the built-in *Registration* flow.
 Sub-flows success depends on how their executions evaluate, including their contained sub-flows. See the <<_execution-requirements, execution requirements section>> for an in-depth explanation of how sub-flows work.
 
 [NOTE]
@@ -131,7 +130,7 @@ After adding an execution, check the requirement has the correct value.
 All elements in a flow have a *Delete* option in the *Actions* menu. This action removes the element from the flow.
 Executions have a *Config* menu option to configure the execution. It is also possible to add executions and sub-flows to sub-flows with the *Add execution* and *Add flow* menu options.
 
-Since the order of execution is important, it is possible to move executions and sub-flows up and down within their flows using the up and down buttons beside their names.
+Since the order of execution is important, you can move executions and sub-flows up and down within their flows using the up and down buttons beside their names.
 
 ==== Creating a password-less browser login flow
 
@@ -195,7 +194,7 @@ At this stage, the form requires a username but no password. We must enable pass
 . Click *Save*.
 . Click *Required* for the *OTP Form* authentication type to set its requirement to required.
 
-Finally, we must change the bindings.
+Finally, change the bindings.
 
 . Click the *Bindings* tab.
 . Click the *Browser Flow* drop-down list.
@@ -207,9 +206,9 @@ image:images/Passwordless-browser-login.png[]
 
 After entering the username, the flow works as follows:
 
-If the user has WebAuthn passwordless credentials recorded, they can use them to login directly. This is the password-less login. The user can also select *Password with OTP* because the `WebAuthn Passwordless` execution and the `Password with OTP` flow are set to *Alternative*. If they are set to *Required*, the user has to enter WebAuthn, password, and OTP.
+If users have WebAuthn passwordless credentials recorded, they can use these credentials to log in directly. This is the password-less login. The user can also select *Password with OTP* because the `WebAuthn Passwordless` execution and the `Password with OTP` flow are set to *Alternative*. If they are set to *Required*, the user has to enter WebAuthn, password, and OTP.
 
-If the user selects the *Try another way* link with `WebAuthn passwordless` authentication, they can choose between `Password` and `Security Key` (WebAuthn passwordless). When selecting the password, the user will need to continue and login with the assigned OTP. If the user has no WebAuthn credentials, they must enter the password and then the OTP. If the user has no OTP credential, they will be asked to record one.
+If the user selects the *Try another way* link with `WebAuthn passwordless` authentication, the user can choose between `Password` and `Security Key` (WebAuthn passwordless). When selecting the password, the user will need to continue and log in with the assigned OTP. If the user has no WebAuthn credentials, the user must enter the password and then the OTP. If the user has no OTP credential, they will be asked to record one.
 
 [NOTE]
 ====
@@ -218,7 +217,7 @@ Since the WebAuthn Passwordless execution is set to *Alternative* rather than  *
 . Enabling the *Webauthn Register Passwordless* required action in the realm (see the <<_webauthn,WebAuthn>> documentation).
 . Setting the required action using the *Credential Reset* part of a user's xref:ref-user-credentials_{context}[Credentials] management menu.
 
-Creating an advanced flow such as this can have side effects. For example, if you enable the ability to reset the password for users, this would be accessible from the password form. In the default `Reset Credentials` flow, users must enter their username. Since the user has already entered their username earlier in the `Browser Password-less` flow, this is unnecessary for {project_name} and sub-optimal for user experience. To correct this, you can:
+Creating an advanced flow such as this can have side effects. For example, if you enable the ability to reset the password for users, this would be accessible from the password form. In the default `Reset Credentials` flow, users must enter their username. Since the user has already entered a username earlier in the `Browser Password-less` flow, this action is unnecessary for {project_name} and sub-optimal for user experience. To correct this problem, you can:
 
 * Copy the `Reset Credentials` flow. Set its name to `Reset Credentials for password-less`, for example.
 * Select *Delete* in the *Actions* menu of the *Choose user* execution.

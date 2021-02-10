@@ -17,7 +17,7 @@ With TOTP, the token generator will hash the current time and a shared secret.  
 With HOTP, {project_name} uses a shared counter rather than the current time. The {project_name} server increments the counter with each successful OTP login. Valid OTPs
 change after a successful login.
 
-TOTP is more secure than HOTP because the matchable OTP is valid for a short window of time, while the OTP for HOTP is valid for an indeterminate amount of time. HOTP is more user-friendly than TOTP because there is no time limit to enter the OTP.
+TOTP is more secure than HOTP because the matchable OTP is valid for a short window of time, while the OTP for HOTP is valid for an indeterminate amount of time. HOTP is more user-friendly than TOTP because no time limit exists to enter the OTP.
 
 HOTP requires a database update every time the server increments the counter. This update is a performance drain on the authentication server during heavy load. To increase efficiency,  TOTP does not remember passwords used, so there is no need to perform database updates. The drawback is that it is possible to re-use TOTPs in the valid time interval. 
 

@@ -20,7 +20,7 @@ A typical workflow:
 
 When the certificate maps to an existing user, the behavior diverges depending on the authentication flow:
 
-* In the Browser Flow, the server prompts the user to confirm their identity or sign in with a username and password.
+* In the Browser Flow, the server prompts users to confirm their identity or sign in with a username and password.
 * In the Direct Grant Flow, the server signs in the user.
 
 ==== Features
@@ -259,11 +259,11 @@ image:images/x509-directgrant-flow-bindings.png[X509 Direct Grant Flow Bindings]
 
 ==== Client certificate lookup
 
-When the {project_name} server receives a direct HTTP request, the {appserver_name} undertow subsystem establishes an SSL handshake and extracts the client certificate. The {appserver_name} saves the client certificate to the `javax.servlet.request.X509Certificate` attribute of the HTTP request, as specified in the servlet specification. The {project_name} X509 authenticator can lookup the certificate from this attribute.
+When the {project_name} server receives a direct HTTP request, the {appserver_name} undertow subsystem establishes an SSL handshake and extracts the client certificate. The {appserver_name} saves the client certificate to the `javax.servlet.request.X509Certificate` attribute of the HTTP request, as specified in the servlet specification. The {project_name} X509 authenticator can look up the certificate from this attribute.
 
 However, when the {project_name} server listens to HTTP requests behind a load balancer or reverse proxy, the proxy server may extract the client certificate and establish a mutual SSL connection. A reverse proxy generally puts the authenticated client certificate in the HTTP header of the underlying request. The proxy forwards the request to the back end {project_name} server. In this case, {project_name} must look up the X.509 certificate chain from the HTTP headers rather than the attribute of the HTTP request.
 
-If {project_name} is behind a reverse proxy, you generally need to configure the alternative provider of the `x509cert-lookup` SPI in {project_dirref}/standalone/configuration/standalone.xml. With the `default` provider looking up the HTTP header certificate, there are two additional built-in providers: `haproxy` and `apache`.
+If {project_name} is behind a reverse proxy, you generally need to configure the alternative provider of the `x509cert-lookup` SPI in {project_dirref}/standalone/configuration/standalone.xml. With the `default` provider looking up the HTTP header certificate, two additional built-in providers exist: `haproxy` and `apache`.
 
 ===== HAProxy certificate lookup provider
 
@@ -283,7 +283,7 @@ You use this provider when your {project_name} server is behind an HAProxy rever
 </spi>
 ----
 
-In this example configuration, the client certificate is looked up from the HTTP header, `SSL_CLIENT_CERT`, and the other certificates from its chain are looked up from HTTP headers such as `CERT_CHAIN_0` through `CERT_CHAIN_9`. The attribute `certificateChainLength` is the maximum length of the chain so the last attribute is `CERT_CHAIN_9` .
+In this example configuration, the client certificate is looked up from the HTTP header, `SSL_CLIENT_CERT`, and the other certificates from its chain are looked up from HTTP headers such as `CERT_CHAIN_0` through `CERT_CHAIN_9`. The attribute `certificateChainLength` is the maximum length of the chain so the last attribute is `CERT_CHAIN_9`.
 
 Consult the HAProxy documentation for the details of configuring the HTTP Headers for the client certificate and client certificate chain.
 
@@ -305,7 +305,7 @@ You can use this provider when your {project_name} server is behind an Apache re
 </spi>
 ----
 
-This configuration is same as the `haproxy` provider. Consult the Apache documentation on link:https://httpd.apache.org/docs/current/mod/mod_ssl.html[mod_ssl] and link:https://httpd.apache.org/docs/current/mod/mod_headers.html[mod_headers] for details on how the HTTP Headers for the client certificate and client certificate chain are configured.
+This configuration is the same as the `haproxy` provider. Consult the Apache documentation on link:https://httpd.apache.org/docs/current/mod/mod_ssl.html[mod_ssl] and link:https://httpd.apache.org/docs/current/mod/mod_headers.html[mod_headers] for details on how the HTTP Headers for the client certificate and client certificate chain are configured.
 
 ===== NGINX certificate lookup provider
 
@@ -358,7 +358,7 @@ All certificates in trusted-ca-list-for-client-auth.pem must be added to link:{i
 
 ===== Other reverse proxy implementations
 
-{project_name} does not have built-in support for other reverse proxy implementations. However, you can make other reverse proxies behave in a similar way to `apache` or `haproxy`. If none of these work, you must create your implementation of the `org.keycloak.services.x509.X509ClientCertificateLookupFactory` and `org.keycloak.services.x509.X509ClientCertificateLookup` providers. See the link:{developerguide_link}[{developerguide_name}] for details on how to add your provider.
+{project_name} does not have built-in support for other reverse proxy implementations. However, you can make other reverse proxies behave in a similar way to `apache` or `haproxy`. If none of these work, create your implementation of the `org.keycloak.services.x509.X509ClientCertificateLookupFactory` and `org.keycloak.services.x509.X509ClientCertificateLookup` providers. See the link:{developerguide_link}[{developerguide_name}] for details on how to add your provider.
 
 ==== Troubleshooting
 
