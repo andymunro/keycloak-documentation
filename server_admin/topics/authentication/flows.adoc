@@ -119,7 +119,7 @@ image:{project_images}/Create-authentication-execution.png[Adding an Authenticat
 Two types of executions exist, _automatic executions_ and _interactive executions_. _Automatic executions_ are similar to the *Cookie* execution and will automatically
 perform their action in the flow. _Interactive executions_ halt the flow to get input. Executions executing successfully set their status to _success_.  For a flow to complete, it needs at least one execution with a status of _success_. 
 
-You can add sub-flows to top-level flows with the *Add flow* button. The *Add flow* button displays the *Create Execution Flow* page. This page is similar to the *Create Top Level Form* page, the difference is that the *Flow Type* can be *generic* (default) or *form*. The *form* type constructs a sub-flow that generates a form for the user, similar to the built-in *Registration* flow.
+You can add sub-flows to top-level flows with the *Add flow* button. The *Add flow* button displays the *Create Execution Flow* page. This page is similar to the *Create Top Level Form* page. The difference is that the *Flow Type* can be *generic* (default) or *form*. The *form* type constructs a sub-flow that generates a form for the user, similar to the built-in *Registration* flow.
 Sub-flows success depends on how their executions evaluate, including their contained sub-flows. See the <<_execution-requirements, execution requirements section>> for an in-depth explanation of how sub-flows work.
 
 [NOTE]
