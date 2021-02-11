@@ -11,7 +11,7 @@ To obtain a secret from a vault rather than entering it directly, enter the foll
 ----
 where the `_key_` is the name of the secret recognized by the vault.
 
-{project_name} combines the realm name with the `_key_` obtained from the vault expression to prevent secrets from leaking across realms. This method means that the `_key_` does not directly map to an entry in the vault but creates the final entry name according to the algorithm used to combine the `_key_` with the realm name.
+To prevent secrets from leaking across realms, {project_name} combines the realm name with the `_key_` obtained from the vault expression. This method means that the `_key_` does not directly map to an entry in the vault but creates the final entry name according to the algorithm used to combine the `_key_` with the realm name.
 
 You can obtain the secret from the vault in the following fields:
 
@@ -24,11 +24,11 @@ In the <<_ldap,LDAP settings>> of LDAP-based user federation.
 OIDC identity provider secret::
 In the _Client Secret_ inside identity provider <<_identity_broker_oidc,OpenID Connect Config>>
 
-To use a vault, you must register a vault provider in {project_name}. You can use the providers described <<_providers, here>> or implement your provider. See the link:{developerguide_link}[{developerguide_name}] for more information.
+To use a vault, register a vault provider in {project_name}. You can use the providers described <<_providers, here>> or implement your provider. See the link:{developerguide_link}[{developerguide_name}] for more information.
 
 [NOTE]
 ====
-{project_name} permits a maximum of one active vault provider per {project_name} instance at a time. You must configure the vault provider in each instance within the cluster consistently.
+{project_name} permits a maximum of one active vault provider per {project_name} instance at a time. Configure the vault provider in each instance within the cluster consistently.
 ====
 
 [[_providers]]
@@ -37,7 +37,7 @@ To use a vault, you must register a vault provider in {project_name}. You can us
 
 {project_name} supports vault implementation for https://kubernetes.io/docs/concepts/configuration/secret/[Kubernetes secrets]. You can mount Kubernetes secrets as data volumes, and they appear as a directory with a flat-file structure. {project_name} represents each secret as a file with the file's name as the secret name and the file's contents as the secret value.
 
-You must name the files within this directory as the secret name prefixed by the realm name and an underscore. You must double all underscores within the secret name or the realm name in the file name. For example, for a field within a realm named `sso_realm`, a reference to a secret with the name `secret-name` would be written as `${vault.secret-name}`, and the file name looked up would be `sso+++__+++realm+++_+++secret-name`. Note the underscore doubled in realm name.
+You must name the files within this directory as the secret name prefixed by the realm name and an underscore. Double all underscores within the secret name or the realm name in the file name. For example, for a field within a realm named `sso_realm`, a reference to a secret with the name `secret-name` would be written as `${vault.secret-name}`, and the file name looked up would be `sso+++__+++realm+++_+++secret-name`. Note the underscore doubled in realm name.
 
 To use this type of secret store, you must declare the `files-plaintext` vault provider in the standalone.xml file and set its parameter for the directory containing the mounted volume. This example shows the `files-plaintext` provider with the directory where vault files are searched set to `standalone/configuration/vault` relative to the {project_name} base directory:
 
@@ -65,7 +65,7 @@ Here is the equivalent configuration using CLI commands:
 
 {project_name} also provides support for reading secrets stored in an Elytron credential store. The `elytron-cs-keystore` vault provider can retrieve secrets from the credential store's keystore based implementation, which is also the default implementation Elytron provides.
 
-A keystore backs this credential store. `JCEKS` is the default format, but it is possible to use other formats such as `PKCS12`. Users can create and manage the store contents using the `elytron` subsystem in WildFly/JBoss EAP, or the `elytron-tool.sh` script.
+A keystore backs this credential store. `JCEKS` is the default format, but you can use other formats such as `PKCS12`. Users can create and manage the store contents using the `elytron` subsystem in WildFly/JBoss EAP, or the `elytron-tool.sh` script.
 
 To use this provider, you must declare the `elytron-cs-keystore` in the `keycloak-server` subsystem and set the location and master secret of the keystore created by Elytron. An example of the minimal configuration for the provider follows:
 
@@ -82,7 +82,7 @@ To use this provider, you must declare the `elytron-cs-keystore` in the `keycloa
 </spi>
 ----
 
-If the underlying keystore has a format different than `JCEKS`, you must specify this format by using the `keyStoreType`:
+If the underlying keystore has a format different from `JCEKS`, you must specify this format by using the `keyStoreType`:
 
 [source, xml]
 ----
@@ -181,7 +181,7 @@ The `FACTORY_PROVIDED` resolver provides a hook that you can use to implement a 
     }
 ----
 
-The custom factory returns a key resolver that combines the realm and key with a triple `#` character. For example, an entry would look like `master_realm###smtp_key`. You must then install this factory like any custom provider.
+The custom factory returns a key resolver that combines the realm and key with a triple `#` character. For example, an entry would be `master_realm###smtp_key`. Install this factory like any custom provider.
 
 [NOTE]
 ====
