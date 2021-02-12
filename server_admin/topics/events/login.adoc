@@ -1,7 +1,7 @@
 
 === Login Events
 
-{project_name} triggers a login event for actions such as successful user login, a user entering an incorrect password, or a user account updating. {project_name} can record and make available to view every single event affecting users. By default, {project_name} does not store or display events in the Admin Console. {project_name} logs error events to the console and the server's log file only.
+{project_name} triggers a login event for actions such as successful user login, a user entering an incorrect password, or a user account updating. {project_name} can record and make available to view every single event that affects users. By default, {project_name} does not store or display events in the Admin Console. {project_name} logs error events to the console and the server's log file only.
 
 To start saving events, you must enable storage.
 
@@ -33,7 +33,7 @@ You can filter events using the *Filter* button.
 .Login Event Filter
 image:{project_images}/login-events-filter.png[Login Event Filter]
 
-In this example, we filter only `Login` events. Click the *Update* button to run the filter.
+In this example, we filter only `Login` events. Click *Update* to run the filter.
 
 ==== Event Types
 
@@ -46,7 +46,7 @@ In this example, we filter only `Login` events. Click the *Update* button to run
 |A user logs in.
 
 |Register
-|A user registers
+|A user registers.
 
 |Logout
 |A user logs out.
@@ -103,7 +103,7 @@ Each event has a corresponding error event.
 Event listeners listen for events and perform actions based on that event. {project_name} includes two built-in listeners, the Logging Event Listener and Email Event Listener.
 
 ===== The Logging Event Listener
-The Logging Event Listener writes to a log file when an error event occurs. {project_name} enables the Logging Event Listener by default.
+The Logging Event Listener writes to a log file when an error event occurs. When the Logging Event Listener is enabled, this listener writes to a log file when an error event occurs.
 
 An example log message from a Logging Event Listener:
 
@@ -171,11 +171,14 @@ The Email Event Listener sends an email to the user's account when an event occu
 * Update Time-based One-time Password (TOTP).
 * Remove Time-based One-time Password (TOTP).
 
+.Procedure
+
 To enable the Email Listener:
 
-.Procedure
+. Click *Events* from the menu.
 . Click the *Config* tab.
-. Click the *Event Listeners* field. You can select `email` from the drop-down list box.
+. Click the *Event Listeners* field.
+. Select `email`.
 
 You can exclude events by editing the `standalone.xml`, `standalone-ha.xml`, or `domain.xml` configuration files included in your distribution. For example:
 
@@ -190,7 +193,7 @@ You can exclude events by editing the `standalone.xml`, `standalone-ha.xml`, or 
 </spi>
 ----
 
-You can set a maximum length of time the event detail stores in the database by editing the `standalone.xml`, `standalone-ha.xml`, or `domain.xml` configuration files. This setting is useful if a field (for example, redirect_uri) is long. For example:
+You can set a maximum length of the Event detail in the database by editing the `standalone.xml`, `standalone-ha.xml`, or `domain.xml` configuration files. This setting is useful if a field (for example, redirect_uri) is long. For example:
 
 [source,xml]
 ----
