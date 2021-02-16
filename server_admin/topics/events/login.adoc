@@ -1,9 +1,9 @@
 
 === Login Events
 
-{project_name} triggers a login event for actions such as successful user login, a user entering an incorrect password, or a user account updating. {project_name} can record and make available to view every single event that affects users. By default, {project_name} does not store or display events in the Admin Console. {project_name} logs error events to the console and the server's log file only.
+You can record and view every event that affects users. {project_name} triggers login events for actions such as successful user login, a user entering an incorrect password, or a user account updating. By default, {project_name} does not store or display events in the Admin Console. Only the error events are logged to the Admin Console and the server’s log file.
 
-To start saving events, you must enable storage.
+To start saving events, enable storage.
 
 .Procedure
 . Click *Events* in the menu.
@@ -19,7 +19,7 @@ image:{project_images}/login-events-settings.png[Save Events]
 +
 . Specify the events to store in the *Saved Types* field.
 
-You can click the *Clear events* button to delete all the events in the database.
+You can click the *Clear events* button to delete all events.
 
 Specify the length of time to store events in the *Expiration* field. When you enable login event storage and enable your settings, click the *Save* button.
 
@@ -103,7 +103,7 @@ Each event has a corresponding error event.
 Event listeners listen for events and perform actions based on that event. {project_name} includes two built-in listeners, the Logging Event Listener and Email Event Listener.
 
 ===== The Logging Event Listener
-The Logging Event Listener writes to a log file when an error event occurs. When the Logging Event Listener is enabled, this listener writes to a log file when an error event occurs.
+When the Logging Event Listener is enabled, this listener writes to a log file when an error event occurs.
 
 An example log message from a Logging Event Listener:
 
