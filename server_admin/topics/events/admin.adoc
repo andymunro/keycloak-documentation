@@ -12,7 +12,7 @@ To enable auditing of Admin actions:
 .Event Configuration
 image:{project_images}/login-events-config.png[Event Configuration]
 +
-. Toggle *Save Events* to *ON* in the `Admin Events Settings` section. {project_name} displays the *Include Representation* switch.
+. Toggle *Save Events* to *ON* in the *Admin Events Settings* section. {project_name} displays the *Include Representation* switch.
 +
 .Admin Event Configuration
 image:{project_images}/admin-events-settings.png[Admin Event Configuration]
