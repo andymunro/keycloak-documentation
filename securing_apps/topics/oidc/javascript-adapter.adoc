@@ -91,8 +91,8 @@ It has no other task than sending the received tokens to the main application an
 
 Please keep in mind that this page at the specified location must be provided by the application itself and is _not_ part of the JavaScript adapter!
 
-WARNING: Starting with Chrome version 80 (released on February 2020), silent `check-sso` functionality will work only
-when the SSL / TLS connection is configured on the {project_name} side.
+
+WARNING: Starting with Chrome version 80 (released on February 2020), silent `check-sso` functionality will work only -when the SSL / TLS connection is configured on the {project_name} side.
 
 To enable `login-required` set `onLoad` to `login-required` and pass to the init method:
 
