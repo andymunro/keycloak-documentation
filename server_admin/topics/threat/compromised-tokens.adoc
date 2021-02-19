@@ -10,6 +10,6 @@ Ensure refresh tokens always stay private to the client and are never transmitte
 You can mitigate damage from leaked access tokens and refresh tokens by issuing these tokens as holder-of-key tokens. See <<_mtls-client-certificate-bound-tokens, OAuth 2.0 Mutual TLS Client Certificate Bound Access Token>> for more information.
 
 If an access token or refresh token is compromised, access the Admin Console and push a not-before revocation policy to all applications. Pushing a not-before policy ensures that any tokens issued before that time become invalid. 
-Pushing a new not-before policy ensures that applications must download new public keys from {project_name} and mitigate damage from a compromised realm signing key. See <<realm_keys, keys chapter>> for more information.
+Pushing a new not-before policy ensures that applications must download new public keys from {project_name} and mitigate damage from a compromised realm signing key. See the <<realm_keys, keys chapter>> for more information.
 
 You can disable specific applications, clients, or users if they are compromised.

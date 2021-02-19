@@ -11,7 +11,7 @@ In the Admin Console, you can specify the values of the X-FRAME_OPTIONS and Cont
 . Click the *Realm Settings* menu item.
 . Click the *Security Defenses* tab.
 +
-.Security Defences
+.Security Defenses
 image:{project_images}/security-headers.png[Security Defences]
 
 By default, {project_name} only sets up a _same-origin_ policy for iframes.
