@@ -12,14 +12,13 @@ By default, {project_name} maps the username, email, first name, and last name o
 . Click *User Federation* in the menu.
 +
 .User Federation
-image:{project_images}/user-federation.png[]
+image:{project_images}/user-federation.png[User Federation]
 +
-. Click the *Add Provider* drop-down list.
-. Click _ldap_, and {project_name} brings you to the LDAP configuration page.
+. Select _ldap_ from the *Add Provider* list. {project_name} brings you to the LDAP configuration page.
 
 ==== Storage Mode
 
-{project_name} imports users from LDAP into the local {project_name} user database. This copy of the user database synchronizes on-demand or through a periodic background task. The exception to this is synchronizing passwords. {project_name} never imports passwords. Password validation always occurs on the LDAP server.
+{project_name} imports users from LDAP into the local {project_name} user database. This copy of the user database synchronizes on-demand or through a periodic background task. An exception exists for synchronizing passwords. {project_name} never imports passwords. Password validation always occurs on the LDAP server.
 
 The advantage of synchronization is that all {project_name} features work efficiently because any required extra per-user data is stored locally. The disadvantage is that each time {project_name} queries a specific user for the first time, {project_name} performs a corresponding database insert. 
 
