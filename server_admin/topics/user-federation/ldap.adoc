@@ -37,20 +37,20 @@ When you attempt to change the non-LDAP mapped user data, the user update is not
 
 ==== Edit Mode
 
-Users and admins can modify user metadata, users through the <<_account-service, User Account Service>>, and admins through the admin console. The `Edit Mode` configuration on the LDAP configuration page defines the user's LDAP update privileges.
+Users and admins can modify user metadata, users through the <<_account-service, Account Console>>, and admins through the admin console. The `Edit Mode` configuration on the LDAP configuration page defines the user's LDAP update privileges.
 
 READONLY::
-It is impossible to change username, email, first name, last name, and other mapped attributes. {project_name} shows an error anytime a user attempts to update these fields. Password updates are not supported.
+You cannot change the username, email, first name, last name, and other mapped attributes. {project_name} shows an error anytime a user attempts to update these fields. Password updates are not supported.
 
 WRITABLE::
-It is possible to change username, email, first name, last name, and other mapped attributes and passwords and synchronize them automatically with the LDAP store.
+You cannot change the username, email, first name, last name, and other mapped attributes and passwords and synchronize them automatically with the LDAP store.
 
 UNSYNCED::
-{project_name} stores changes to username, email, first name, last name, and passwords in {project_name} local storage, so the admin must synchronize this data back to LDAP. In this mode, {project_name} deployments can update user metadata on read-only LDAP servers. This option also applies when importing users from LDAP into the local {project_name} user database.
+{project_name} stores changes to the username, email, first name, last name, and passwords in {project_name} local storage, so the administrator must synchronize this data back to LDAP. In this mode, {project_name} deployments can update user metadata on read-only LDAP servers. This option also applies when importing users from LDAP into the local {project_name} user database.
 
 [NOTE]
 ====
-When {project_name} creates the LDAP provider, {project_name} also creates a set of initial <<_ldap_mappers,LDAP mappers>>. {project_name} configures these mappers based on a combination of the `Vendor`, `Edit Mode`, and `Import Users` switches. For example, when edit mode is UNSYNCED, {project_name} configures the mappers to read a particular user attribute from the database and not from the LDAP server. However, if you later change the edit mode, the mapper's configuration does not change because it is impossible to detect if the configuration changes changed in UNSYNCED mode. Decide the `Edit Mode` when creating the LDAP provider. This note applies to `Import Users` switch also.
+When {project_name} creates the LDAP provider, {project_name} also creates a set of initial <<_ldap_mappers,LDAP mappers>>. {project_name} configures these mappers based on a combination of the *Vendor*, *Edit Mode*, and *Import Users* switches. For example, when edit mode is UNSYNCED, {project_name} configures the mappers to read a particular user attribute from the database and not from the LDAP server. However, if you later change the edit mode, the mapper's configuration does not change because it is impossible to detect if the configuration changes changed in UNSYNCED mode. Decide the *Edit Mode* when creating the LDAP provider. This note applies to *Import Users* switch also.
 ====
 
 ==== Other configuration options
@@ -72,7 +72,7 @@ Hover the mouse pointer over the tooltips in the Admin Console to see more detai
 
 ==== Connecting to LDAP over SSL
 
-When you configure a secure connection URL to your LDAP store (for example,`ldaps://myhost.com:636'), {project_name} uses SSL to communicate with the LDAP server. You must configure a truststore on the {project_name} server side. If you do not, {project_name} cannot trust the SSL connection to LDAP.
+When you configure a secure connection URL to your LDAP store (for example,`ldaps://myhost.com:636'), {project_name} uses SSL to communicate with the LDAP server. Configure a truststore on the {project_name} server side so that {project_name} can trust the SSL connection to LDAP.
 
 Configure the global truststore for {project_name} with the Truststore SPI. For more information about configuring the global truststore, see the link:{installguide_link}[{installguide_name}]. If you do not configure the Truststore SPI, the truststore falls back to the default mechanism provided by Java, which can be the file supplied by the `javax.net.ssl.trustStore` system property or the cacerts file from the JDK if the system property is unset.
 
@@ -80,9 +80,9 @@ The `Use Truststore SPI` configuration property, in the LDAP federation provider
 
 ==== Synchronizing LDAP users to {project_name}
 
-If you set the *Import Users* option, the LDAP Provider handles importing LDAP users into the {project_name} local database. The first time a user logs in, the LDAP provider imports the LDAP user into the {project_name} database and validates the LDAP password. This first time a user logs in is the only time {project_name} imports the user. If you click the *Users*  menu in the Admin Console and click the *View all users* button, you see the LDAP users authenticated once by {project_name} only. {project_name} imports users this way, so this operation does not trigger an import of the entire LDAP user database.
+If you set the *Import Users* option, the LDAP Provider handles importing LDAP users into the {project_name} local database. The first time a user logs in, the LDAP provider imports the LDAP user into the {project_name} database and validates the LDAP password. This first time a user logs in is the only time {project_name} imports the user. If you click the *Users*  menu in the Admin Console and click the *View all users* button, you only see the LDAP users authenticated once by {project_name}. {project_name} imports users this way, so this operation does not trigger an import of the entire LDAP user database.
 
-If you want to sync all LDAP users into the {project_name} database, configure and enable the `Sync Settings` on the LDAP provider configuration page.
+If you want to sync all LDAP users into the {project_name} database, configure and enable the *Sync Settings* on the LDAP provider configuration page.
 
 Two types of synchronization exist:
 
@@ -92,7 +92,7 @@ This type synchronizes all LDAP users into the {project_name} database. The LDAP
 Periodic Changed users sync::
 When synchronizing, {project_name} creates or updates users created or updated after the last sync only.
 
-The best way to synchronize is to click the `Synchronize all users` button when you first create the LDAP provider, then set up periodic synchronization of changed users.
+The best way to synchronize is to click *Synchronize all users* when you first create the LDAP provider, then set up periodic synchronization of changed users.
 
 [[_ldap_mappers]]
 
@@ -107,7 +107,7 @@ LDAP mappers are `listeners` triggered by the LDAP Provider. They provide anothe
 When you create an LDAP Federation provider, {project_name} automatically provides a set of `mappers` for this provider. This set is changeable by users, who can also develop mappers or update/delete existing ones.
 
 User Attribute Mapper::
-This mapper specifies which LDAP attribute maps to the attribute of the {project_name} user. For example, you can configure the `mail` LDAP attribute to the `email` attribute in the {project_name} database. For this mapper implementation, there is always a one-to-one mapping.
+This mapper specifies which LDAP attribute maps to the attribute of the {project_name} user. For example, you can configure the `mail` LDAP attribute to the `email` attribute in the {project_name} database. For this mapper implementation, a one-to-one mapping always exists.
 
 FullName Mapper::
 This mapper specifies the full name of the user. {project_name} saves the name in an LDAP attribute (usually `cn`) and maps the name to the `firstName` and `lastname` attributes in the {project_name} database. Having `cn` to contain the full name of the user is common for LDAP deployments.
@@ -130,19 +130,19 @@ Group Mapper::
 This mapper maps LDAP groups from a branch of an LDAP tree into groups within {project_name}. This mapper also propagates user-group mappings from LDAP into user-group mappings in {project_name}.
 
 MSAD User Account Mapper::
-This mapper is specific to Microsoft Active Directory (MSAD). It can integrate the MSAD user account state into the {project_name} account state, such as enabled account or  expired password. This mapper uses the `userAccountControl`, and `pwdLastSet` LDAP attributes, specific to MSAD and are not the LDAP standard. For example, if the value of `pwdLastSet` is `0`, the {project_name} user must update their password, and there will be an UPDATE_PASSWORD required action added to the user. If the value of  `userAccountControl` is `514` (disabled account), the {project_name} user is disabled.
+This mapper is specific to Microsoft Active Directory (MSAD). It can integrate the MSAD user account state into the {project_name} account state, such as enabled account or  expired password. This mapper uses the `userAccountControl`, and `pwdLastSet` LDAP attributes, specific to MSAD and are not the LDAP standard. For example, if the value of `pwdLastSet` is `0`, the {project_name} user must update their password. The result is an UPDATE_PASSWORD required action added to the user. If the value of  `userAccountControl` is `514` (disabled account), the {project_name} user is disabled.
 
 Certificate Mapper::
 This mapper maps X.509 certificates. {project_name} uses it in conjunction with X.509 authentication and `Full certificate in PEM format` as an identity source. This mapper behaves similarly to the `User Attribute Mapper`, but {project_name} can filter for an LDAP attribute storing a PEM or DER format certificate. Enable `Always Read Value From LDAP` with this mapper.
 
-User Attribute mappers that map basic {project_name} user attributes, such as username, firstname, lastname, and email, to corresponding LDAP attributes. You can extend these and provide your own additional attribute mappings. The admin console provides tooltips to help with configuring the corresponding mappers.
+User Attribute mappers that map basic {project_name} user attributes, such as username, firstname, lastname, and email, to corresponding LDAP attributes. You can extend these and provide your own additional attribute mappings. The Admin Console provides tooltips to help with configuring the corresponding mappers.
 
 [[_ldap_password_hashing]]
 ==== Password Hashing
 
 When {project_name} updates a password, {project_name} sends the password in plain-text format. This action is different from updating the password in the built-in {project_name} database, where {project_name} hashes and salts the password before sending it to the database. For LDAP, {project_name} relies on the LDAP server to hash and salt the password.
 
-By default, LDAP servers such as MSAD, RHDS, or FreeIPA hash and salt passwords. Other LDAP servers such as OpenLDAP or ApacheDS store the passwords in plain-text unless you use the _LDAPv3 Password Modify Extended Operation_ as described in https://tools.ietf.org/html/rfc3062[RFC3062]. You must enable the LDAPv3 Password Modify Extended Operation in the LDAP configuration page. See the documentation of your LDAP server for more details.
+By default, LDAP servers such as MSAD, RHDS, or FreeIPA hash and salt passwords. Other LDAP servers such as OpenLDAP or ApacheDS store the passwords in plain-text unless you use the _LDAPv3 Password Modify Extended Operation_ as described in https://tools.ietf.org/html/rfc3062[RFC3062]. Enable the LDAPv3 Password Modify Extended Operation in the LDAP configuration page. See the documentation of your LDAP server for more details.
 
 [WARNING]
 ====
