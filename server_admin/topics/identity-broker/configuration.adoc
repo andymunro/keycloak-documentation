@@ -35,10 +35,10 @@ Although each type of identity provider has its configuration options, all share
 |Configuration|Description
 
 |Alias
-|The alias is a unique identifier for an identity provider and references an internal identity provider. {project_name} uses the alias to build redirect URIs for OpenID Connect protocols, which require a redirect URI or callback URL to communicate with an identity provider. All identity providers must have an alias. Alias examples include `facebook`, `google`, and `idp.acme.com`.
+|The alias is a unique identifier for an identity provider and references an internal identity provider. {project_name} uses the alias to build redirect URIs for OpenID Connect protocols that require a redirect URI or callback URL to communicate with an identity provider. All identity providers must have an alias. Alias examples include `facebook`, `google`, and `idp.acme.com`.
 
 |Enabled
-|Toggles the provider on or off.
+|Toggles the provider ON or OFF.
 
 |Hide on Login Page
 |When *ON*, {project_name} does not display this provider as a login option on the login page. Clients can request this provider by using the 'kc_idp_hint' parameter in the URL to request a login.

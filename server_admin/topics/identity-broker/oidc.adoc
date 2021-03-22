@@ -40,7 +40,7 @@ image:{project_images}/oidc-add-identity-provider.png[Add Identity Provider]
 |A realm acting as an OIDC client to the external IDP. The realm must have an OIDC client ID if you use the Authorization Code Flow to interact with the external IDP.
 
 |Client Secret
-|Client secret from an external <<_vault-administration,vault>>. Necessary if you are using the Authorization Code Flow.
+|Client secret from an external <<_vault-administration,vault>>. This secret is necessary if you are using the Authorization Code Flow.
 
 |Issuer
 |{project_name} validates issuer claims, in responses from the IDP, against this value.
