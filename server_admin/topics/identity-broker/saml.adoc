@@ -23,7 +23,7 @@ image:{project_images}/saml-add-identity-provider.png[Add Identity Provider]
 
 |Single Logout Service URL
 |The SAML logout endpoint. If your SAML IDP publishes an IDP entity descriptor, the value of this field is specified there.
- 
+
 |Backchannel Logout
 |Toggle this switch to *ON* if your SAML IDP supports back channel logout.
 
@@ -31,11 +31,9 @@ image:{project_images}/saml-add-identity-provider.png[Add Identity Provider]
 |The URI reference corresponding to a name identifier format. By default, {project_name} sets it to `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`.
 
 |Principal Type
-<<<<<<< HEAD
 |Specifies which part of the SAML assertion will be used to identify and track external user identities. Can be either Subject NameID or SAML attribute (either by name or by friendly name). Subject NameID value can not be set together with 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient' NameID Policy Format value.
 =======
 |Specifies the part of the SAML assertion {project_name} uses to identify and track external user identities. The Principal Type can be Subject NameID or SAML attribute (by name or by friendly name).
->>>>>>> KEYCLOAK-15756 Initial wording (#58)
 
 |Principal Attribute
 |If a Principal type is non-blank, this field specifies the name ("Attribute [Name]") or the friendly name ("Attribute [Friendly Name]") of the identifying attribute.
