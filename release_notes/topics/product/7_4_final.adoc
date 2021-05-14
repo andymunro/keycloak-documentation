@@ -150,7 +150,9 @@ The following features continue to be in a Technology Preview status:
 
 == Removed or deprecated features
 
-Two features have a change in status:
+These features have a change in status:
+
+* Installation from an RPM is deprecated. Red Hat Single Sign-On will continue to deliver RPMs for the life of the 7.x product, but will not deliver RPMs with the next major version. The product will continue to support installation from a ZIP file and installation on OpenShift.
 
 * Authorization Services Drools Policy has been removed
 
