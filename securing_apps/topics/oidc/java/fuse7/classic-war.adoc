@@ -2,7 +2,7 @@
 [[_fuse7_adapter_classic_war]]
 ===== Securing a Classic WAR Application
 
-The needed steps to secure your WAR application are:
+.Procedure
 
 . In the `/WEB-INF/web.xml` file, declare the necessary:
 * security constraints in the <security-constraint> element

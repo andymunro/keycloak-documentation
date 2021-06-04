@@ -6,15 +6,17 @@ You must first install the `keycloak` feature in the JBoss Fuse environment. The
 
 ====== Installing from the Maven Repository
 
-As a prerequisite, you must be online and have access to the Maven repository.
+.Prerequisites
+
+* You must be online and have access to the Maven repository.
 
 ifeval::[{project_community}==true]
-For community it's sufficient to be online as all the artifacts and 3rd party dependencies should be available in the maven central repository.
+* For community it is sufficient to be online as all the artifacts and 3rd party dependencies should be available in the maven central repository.
 endif::[]
 ifeval::[{project_product}==true]
-For {project_name} you first need to configure a proper Maven repository, so you can install the artifacts. For more information see the
+* For {project_name} you need to configure a proper Maven repository, so you can install the artifacts. For more information see the
 https://access.redhat.com/maven-repository[JBoss Enterprise Maven repository] page.
-
++
 Assuming the Maven repository is {maven_repository}, add the following to the `$FUSE_HOME/etc/org.ops4j.pax.url.mvn.cfg` file and add the repository to the list of supported repositories. For example:
 
 [source,subs="attributes"]
@@ -25,6 +27,9 @@ Assuming the Maven repository is {maven_repository}, add the following to the `$
     ...
 ----
 endif::[]
+
+
+.Procedure
 
 To install the keycloak feature using the Maven repository, complete the following steps:
 
@@ -55,6 +60,8 @@ features:list | grep keycloak
 
 This is useful if you are offline or do not want to use Maven to obtain the JAR files and other artifacts.
 
+.Procedure
+
 To install the Fuse adapter from the ZIP archive, complete the following steps:
 
 . Download the {project_name} Fuse adapter ZIP archive.
@@ -81,4 +88,3 @@ features:install keycloak
 ----
 
 . Install the corresponding Jetty adapter. Since the artifacts are available directly in the JBoss Fuse `system` directory, you do not need to use the Maven repository.
-

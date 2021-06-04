@@ -1,5 +1,7 @@
 === Supported Platforms
 
+For platforms, {project_name} supports both OpenID Connect and SAML.
+
 ==== OpenID Connect
 
 ===== Java

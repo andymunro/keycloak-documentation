@@ -1,13 +1,11 @@
 
-== Docker Registry Configuration
+== Configuring a Docker registry to use {project_name}
 
 NOTE: Docker authentication is disabled by default. To enable see link:{installguide_profile_link}[{installguide_profile_name}].
 
 This section describes how you can configure a Docker registry to use {project_name} as its authentication server.
 
 For more information on how to set up and configure a Docker registry, see the link:https://docs.docker.com/registry/configuration/[Docker Registry Configuration Guide].
-
-
 
 === Docker Registry Configuration File Installation
 
@@ -39,7 +37,9 @@ WARNING: Don't forget to configure the `REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE` over
 
 WARNING: This installation method is meant to be an easy way to get a docker registry authenticating against a {project_name} server.  It is intended for development purposes only and should never be used in a production or production-like environment.
 
-The zip file installation mechanism provides a quickstart for developers who want to understand how the {project_name} server can interact with the Docker registry.  In order to configure:
+The zip file installation mechanism provides a quickstart for developers who want to understand how the {project_name} server can interact with the Docker registry.
+
+.Procedure
 
  1. From the desired realm, create a client configuration.  At this point you won't have a Docker registry - the quickstart will take care of that part.
  2. Choose the "Docker Compose YAML" option from the installation tab and download the .zip file

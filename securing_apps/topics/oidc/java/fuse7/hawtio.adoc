@@ -2,6 +2,8 @@
 [[_fuse7_hawtio]]
 ===== Securing the Hawtio Administration Console
 
+.Procedure
+
 To secure the Hawtio Administration Console with {project_name}, complete the following steps:
 
 . Create a client in the {project_name} administration console in your realm. For example, in the {project_name} `demo` realm, create a client `hawtio-client`, specify `public` as the Access Type, and specify a redirect URI pointing to Hawtio: \http://localhost:8181/hawtio/*. Configure corresponding Web Origin (in this case, \http://localhost:8181). Setup client scope mapping to include _view-profile_ client role of _account_ client in _Scope_ tab in `hawtio-client` client detail.

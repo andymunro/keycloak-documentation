@@ -6,15 +6,17 @@ You must first install the `keycloak-pax-http-undertow` and `keycloak-jaas` feat
 
 ====== Installing from the Maven Repository
 
-As a prerequisite, you must be online and have access to the Maven repository.
+.Prerequisites
+
+* you must be online and have access to the Maven repository.
 
 ifeval::[{project_community}==true]
-For community it's sufficient to be online as all the artifacts and 3rd party dependencies should be available in the maven central repository.
+* For community it's sufficient to be online as all the artifacts and 3rd party dependencies should be available in the maven central repository.
 endif::[]
 ifeval::[{project_product}==true]
-For {project_name} you first need to configure a proper Maven repository, so you can install the artifacts. For more information see the
+* For {project_name} you first need to configure a proper Maven repository, so you can install the artifacts. For more information see the
 https://access.redhat.com/maven-repository[JBoss Enterprise Maven repository] page.
-
++
 Assuming the Maven repository is {maven_repository}, add the following to the `$FUSE_HOME/etc/org.ops4j.pax.url.mvn.cfg` file and add the repository to the list of supported repositories. For example:
 
 [source,subs="attributes"]
@@ -26,6 +28,8 @@ config:update
 feature:repo-refresh 
 ----
 endif::[]
+
+.Procedure
 
 To install the keycloak feature using the Maven repository, complete the following steps:
 
@@ -55,7 +59,7 @@ feature:list | grep keycloak
 
 This is useful if you are offline or do not want to use Maven to obtain the JAR files and other artifacts.
 
-To install the Fuse adapter from the ZIP archive, complete the following steps:
+.Procedure
 
 . Download the {project_name} Fuse adapter ZIP archive.
 . Unzip it into the root directory of JBoss Fuse. The dependencies are then installed under the `system` directory. You can overwrite all existing jar files.

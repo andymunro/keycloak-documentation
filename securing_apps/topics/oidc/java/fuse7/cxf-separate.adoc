@@ -2,6 +2,8 @@
 [[_fuse7_adapter_cxf_separate]]
 ===== Securing an Apache CXF Endpoint on a Separate Undertow Engine
 
+.Procedure
+
 To run your CXF endpoints secured by {project_name} on a separate Undertow engine, complete the following steps:
 
 . Add `OSGI-INF/blueprint/blueprint.xml` to your application, and in it, add the proper configuration resolver bean similarly to <<_fuse7_adapter_camel,Camel configuration>>.

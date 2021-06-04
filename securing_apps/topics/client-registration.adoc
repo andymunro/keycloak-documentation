@@ -1,5 +1,5 @@
 [[_client_registration]]
-== Client Registration
+== Using the Client Registration service
 
 In order for an application or service to utilize {project_name} it has to register a client in {project_name}.
 An admin can do this through the admin console (or admin REST endpoints), but clients can also register themselves through the {project_name} client

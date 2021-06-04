@@ -2,6 +2,8 @@
 [[_hawtio]]
 ===== Securing the Hawtio Administration Console
 
+.Procedure
+
 To secure the Hawtio Administration Console with {project_name}, complete the following steps:
 
 . Add these properties to the `$FUSE_HOME/etc/system.properties` file:
@@ -57,6 +59,8 @@ features:install keycloak
 Note that the user needs to have the proper realm role to successfully authenticate to Hawtio. The available roles are configured in the `$FUSE_HOME/etc/system.properties` file in `hawtio.roles`.
 
 ====== Securing Hawtio on {fuseHawtioEAPVersion}
+
+.Procedure
 
 To run Hawtio on the {fuseHawtioEAPVersion} server, complete the following steps:
 
