@@ -1,6 +1,6 @@
 [id="con-server-oidc-uri-endpoints_{context}"]
 
-====  {project_name} Server OIDC URI Endpoints
+====  {project_name} server OIDC URI endpoints
 [role="_abstract"]
 The following is a list of OIDC endpoints that {project_name} publishes. These endpoints can be used when a non-{project_name} client adapter uses OIDC to communicate with the authentication server. They are all relative URLs. The root of the URL consists of the HTTP(S) protocol, hostname, and the path, which is usually prefixed with _/auth_:  For example 
 

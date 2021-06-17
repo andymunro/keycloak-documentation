@@ -9,7 +9,7 @@ POST and Redirect bindings are supported. You can choose to require client signa
 
 . Click *Create* to go to the `Add Client` page.
 +
-.Add Client
+.Add client
 image:{project_images}/add-client-saml.png[]
 
 . Enter the `Client ID` of the client. This is often a URL and is the expected `issuer` value in SAML requests sent by the application.
@@ -20,7 +20,7 @@ image:{project_images}/add-client-saml.png[]
 
 . Click *Save*.  This action creates the client and brings you to the `Settings` tab.
 +
-.Client Settings
+.Client settings
 image:{project_images}/client-settings-saml.png[]
 +
 The following list describes each setting:

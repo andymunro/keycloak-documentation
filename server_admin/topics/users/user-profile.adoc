@@ -1,6 +1,5 @@
 
-
-=== User Profile
+= User Profile
 
 In {project_name} a user is associated with a set of attributes. These attributes are used to better describe and identify users within {project_name} as well as to pass over additional information to applications about them.
 
@@ -30,7 +29,7 @@ In the next sections, we'll be looking at how to use the declarative provider to
 In the future, the `declarative-user-profile` provider is going to replace the legacy provider and become the default.
 ====
 
-==== Enabling the Declarative User Profile
+== Enabling the Declarative User Profile
 
 :tech_feature_name: Declarative User Profile
 :tech_feature_setting: -Dkeycloak.profile.feature.declarative_user_profile=enabled
@@ -45,7 +44,7 @@ $ /subsystem=keycloak-server/spi=userProfile:add(default-provider=declarative-us
 
 After setting the default provider, make sure to restart the server.
 
-==== Managing the User Profile
+== Managing the User Profile
 
 The user profile configuration is managed on a per-realm basis. For that, click on the
 `Realm Settings` link on the left side menu and then click on the `User Profile` tab.
@@ -59,7 +58,7 @@ In the `JSON Editor` sub-tab you can view and edit the configuration using a wel
 
 In the next section, you are going to learn how to manage the configuration from the `Attributes` sub-tab.
 
-==== Managing Attributes
+== Managing Attributes
 
 At the `Attributes` sub-tab you should be able to create, edit, and delete the attributes associated with the user profile.
 
@@ -85,7 +84,7 @@ In this section, you can define custom validations when updating the attribute.
 Annotation::
 In this section, you can associate annotations to the attribute.
 
-==== Managing Permissions
+== Managing Permissions
 
 In the `Permission` section, you can define the level of access users and administrators have to read and write to an attribute.
 
@@ -106,7 +105,7 @@ If enabled, administrators can view the attribute. Otherwise, administrators don
 Can admin edit?::
 If enabled, administrators can view and edit the attribute. Otherwise, administrators don't have access to write to the attribute.
 
-==== Managing Validations
+== Managing Validations
 
 In the `Validation` section, you can choose from different forms of validation to make sure the attribute value conforms to specific rules.
 
@@ -148,7 +147,7 @@ image:{project_images}/user-profile-validation.png[]
 |Check if the value has a valid format based on the realm and/or user locale.
 |===
 
-==== Managing Annotations
+== Managing Annotations
 
 In order to pass additional information to frontends, attributes can be decorated with
 annotations to dictate how attributes should be rendered. This capability is mainly useful when extending {project_name} themes to render pages dynamically based on the annotations associated with attributes.
@@ -156,7 +155,7 @@ annotations to dictate how attributes should be rendered. This capability is mai
 .Attribute Annotation
 image:{project_images}/user-profile-annotation.png[]
 
-==== Using the JSON Configuration
+== Using the JSON Configuration
 
 The user profile configuration is stored using a well-defined JSON schema. You can choose from editing the user profile configuration directly by clicking on the `JSON Editor` sub-tab.
 
@@ -191,7 +190,7 @@ The schema supports as many attributes as you need.
 
 For each attribute you should define a `name` and, optionally, the `required`, `permission`, and the `annotations` settings.
 
-===== Required Property
+=== Required Property
 
 The `required` setting defines whether an attribute is required. {project_name} allows you to set an attribute as required based on different conditions.
 
@@ -244,7 +243,7 @@ Similarly, you can choose to make the attribute required when a set of one or mo
 
 The `scopes` property is an array whose values can be any string representing a client scope.
 
-===== Permissions Property
+=== Permissions Property
 
 The attribute-level `permissions` property can be used to define the read and write permissions to an attribute. The permissions are set based on whether these operations can be performed on the attribute by a user, or administrator, or both.
 
@@ -266,7 +265,7 @@ Both `view` and `edit` properties expect an array whose values can be either `us
 
 When the `edit` permission is granted, the `view` permission is implicitly granted.
 
-===== Annotations Property
+=== Annotations Property
 
 The attribute-level `annotation` property can be used to associate additional metadata to attributes. Annotations are mainly useful for passing over additional information about attributes to frontends rendering user attributes based on the user profile configuration. Each annotation is a key/value pair.
 
@@ -284,7 +283,7 @@ The attribute-level `annotation` property can be used to associate additional me
 }
 ----
 
-==== Verifying User Profile
+== Verifying User Profile
 
 In order to make sure user profiles are in compliance with the configuration, administrators may use the `VerifyProfile` required action to eventually force users to update their profiles when authenticating to {project_name}.
 

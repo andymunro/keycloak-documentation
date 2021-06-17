@@ -1,5 +1,5 @@
 [id="con-advanced-settings_{context}"]
-= Advanced Settings
+= Advanced settings
 [role="_abstract"]
 When you click _Advanced Settings_, additional fields are displayed.
 

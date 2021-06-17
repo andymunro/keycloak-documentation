@@ -8,7 +8,7 @@ To protect an application that uses the OpenID connect protocol, you create a cl
 
 . Click *Create* to go to the *Add Client* page.
 +
-.Add Client
+.Add client
 image:{project_images}/add-client-oidc.png[Add Client]
 
 . Enter any name for *Client ID.*
@@ -39,7 +39,7 @@ ifdef::standalone[]
 This action creates the client and bring you to the *Settings*
 tab.
 
-.Client Settings
+.Client settings
 image:{project_images}/client-settings-oidc.png[Client Settings]
 
 [role="_additional-resources"]

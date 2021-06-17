@@ -1,5 +1,5 @@
 [[_client_scopes]]
-=== Client Scopes
+=== Client scopes
 
 If you have many applications you need to secure and register within your organization, it can become tedious to configure the
 <<_protocol-mappers, protocol mappers>> and <<_role_scope_mappings, role scope mappings>> for each of these clients. {project_name} allows
@@ -12,7 +12,7 @@ To create a client scope, follow these steps:
 
 * Go to the `Client Scopes` left menu item. This initial screen shows you a list of currently defined client scopes.
 
-.Client Scopes List
+.Client scopes list
 image:{project_images}/client-scopes-list.png[]
 
 * Click the `Create` button. Name the client scope and save. A _client scope_ will have similar tabs to a regular clients. You can
@@ -42,7 +42,7 @@ to the claims defined in the OpenID Connect specification.
 For example, when you click to open the `phone` client scope and open the `Mappers` tab, you will see the protocol mappers, which
 correspond to the claims defined in the specification for the scope `phone`.
 
-.Client Scope Mappers
+.Client scope mappers
 image:{project_images}/client-scopes-phone.png[]
 
 When the `phone` client scope is linked to a client, that client automatically inherits all the protocol mappers defined in the
@@ -80,7 +80,7 @@ Consent Screen Text::
   link:{developerguide_link}[{developerguide_name}] for more information on localization.
 
 [[_client_scopes_linking]]
-==== Link Client Scope with the Client
+==== Link client scope with the client
 
 Linking between client scope and client is configured in the `Client Scopes` tab of the particular client. There are 2 ways of
 linking between client scope and client.
@@ -111,7 +111,7 @@ it for this example. The token will contain mappers and role scope mappings from
 default scopes) and `phone` (an optional client scope requested by the scope parameter).
 
 [[_client_scopes_evaluate]]
-==== Evaluating Client Scopes
+==== Evaluating client scopes
 
 The tabs `Mappers` and `Scope` of the client contain the protocol mappers and role scope mappings declared solely for this client.
 They do not contain the mappers and scope mappings inherited from client scopes. However, it may be useful to see what the
@@ -122,14 +122,14 @@ You can see all of these when you click the `Client Scopes` tab for the client a
 can select the optional client scopes that you want to apply. This will also show you the value of the `scope` parameter, which needs to
 be sent from the application to the {project_name} OpenID Connect authorization endpoint.
 
-.Evaluating Client Scopes
+.Evaluating client scopes
 image:{project_images}/client-scopes-evaluate.png[]
 
 NOTE: If you want to see how you can send a custom value for a `scope` parameter from your application, see the
 link:{adapterguide_link}#_params_forwarding[parameters forwarding section], if your application uses the servlet adapter, or the
 link:{adapterguide_link}#_javascript_adapter[javascript adapter section], if your application uses the javascript adapter.
 
-===== Generating Example Tokens and User Info
+===== Generating example tokens and user info
 
 If you select a user in the `Evaluate` screen, the following example data is generated:
 
@@ -140,7 +140,7 @@ If you select a user in the `Evaluate` screen, the following example data is gen
 All examples are generated for the particular user and issued for the particular client, with the specified
 value of `scope` parameter. The examples include all of the claims and role mappings used.
 
-==== Client Scopes Permissions
+==== Client scopes permissions
 
 When issuing tokens for a particular user, the client scope is applied only if the user is permitted to use it. In the case that
 a client scope does not have any role scope mappings defined on itself, then each user is automatically permitted to use this
@@ -151,7 +151,7 @@ roles are taken into account when evaluating this intersection.
 If a user is not permitted to use the client scope, then no protocol mappers or role scope mappings will be used when generating tokens
 and the client scope will not appear in the _scope_ value in the token.
 
-==== Realm Default Client Scopes
+==== Realm default client scopes
 
 The `Realm Default Client Scopes` allow you to define set of client scopes, which will be automatically linked to newly created clients.
 
@@ -160,7 +160,7 @@ Open the left menu item `Client Scopes` and then select `Default Client Scopes`.
 From here, select the client scopes that you want to add as `Default Client Scopes` to newly created clients and `Optional Client Scopes`
 to newly created clients.
 
-.Default Client Scopes
+.Default client scopes
 image:{project_images}/client-scopes-default.png[]
 
 Once the client is created, you can unlink the default client scopes, if needed. This is similar to how you

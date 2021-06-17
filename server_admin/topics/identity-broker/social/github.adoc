@@ -9,7 +9,7 @@ To log in with Github, perform the following procedure.
 . Click *Identity Providers* in the menu.
 . From the `Add provider` list, select `Github`.
 +
-.Add Identity Provider
+.Add identity provider
 image:{project_images}/github-add-identity-provider.png[Add Identity Provider]
 +
 . Copy the value of *Redirect URI* to your clipboard.
