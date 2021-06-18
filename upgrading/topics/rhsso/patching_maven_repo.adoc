@@ -9,13 +9,15 @@ Whenever a cumulative patch is released for RH-SSO, a corresponding patch is pro
 
 Use the following procedure to apply updates to your locally installed RH-SSO Client Adapters Maven Repository.
 
-== Prerequisites
+== Updating a locally installed RH-SSO client adapters maven repository
+
+.Prerequisites
 
 * Valid access and subscription to the Red Hat Customer Portal.
 
 * The RH-SSO Client Adapters Maven Repository, previously downloaded and installed locally.
 
-== Update a locally installed RH-SSO Client Adapters Maven Repository
+.Procedure
 
 . Open a browser and log into the link:https://access.redhat.com/[Red Hat Customer Portal].
 
@@ -36,4 +38,5 @@ $ unzip -o rh-sso-7.x.y-incremental-maven-repository.zip  -d RH-SSO_MAVEN_REPOSI
 ```
 +
 
-.. For Microsoft Windows, use the Windows extraction utility to extract the ZIP file into the root of the `RH-SSO_MAVEN_REPOSITORY_PATH` directory. 
+.. For Microsoft Windows, use the Windows extraction utility to extract the ZIP file into the root of the `RH-SSO_MAVEN_REPOSITORY_PATH` directory.
+

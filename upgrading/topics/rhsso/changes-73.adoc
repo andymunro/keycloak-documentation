@@ -2,7 +2,7 @@
 
 The following changes have occurred from RH-SSO 7.2 to RH-SSO 7.3.
 
-=== Changes to Authorization Services
+=== Changes to authorization services
 
 We added support for UMA 2.0. This version of the UMA specification introduced some important changes on how permissions are obtained from the server.
 
@@ -116,7 +116,7 @@ set a fixed hostname which makes it easier to make sure the valid hostname is us
 applications to invoke {project_name} through an alternative URL, for example an internal IP address. It is
 recommended that you switch to this approach in production.
 
-=== JavaScipt Adapter Promise
+=== JavaScipt Adapter promise
 
 To use native JavaScript promise with the JavaScript adapter it is now required to set `promiseType` to `native` in the
 init options.
