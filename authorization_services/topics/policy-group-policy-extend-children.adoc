@@ -1,5 +1,5 @@
 [[_policy_group_extend_access_children]]
-= Extending Access to Child Groups
+= Extending access to child groups
 
 By default, when you add a group to this policy, access restrictions will only apply to members of the selected group.
 

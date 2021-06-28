@@ -1,5 +1,5 @@
 [[_authorization_quickstarts]]
-= Authorization Quickstarts
+= Authorization quickstarts
 
 In addition to the *app-authz-jee-vanilla* quickstart that was used as a sample application in the previous section, the
 link:{quickstartRepo_link}[{quickstartRepo_name}] contains other applications that make use of the authorization services
@@ -13,7 +13,7 @@ can be used in their own applications.
 Each quickstart has a `README` file with instructions on how to build, deploy, and test the sample application. The following
 table provides a brief description of the available authorization quickstarts:
 
-.Authorization Quickstarts
+.Authorization quickstarts
 |===
 |Name |Description
 

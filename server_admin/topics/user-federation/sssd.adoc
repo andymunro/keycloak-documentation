@@ -156,8 +156,7 @@ To configure a federated SSSD store, complete the following steps:
 
 . Navigate to the Administration Console.
 . From the left menu, select *User Federation.*
-. From the *Add Provider* dropdown list, select *sssd.* The sssd configuration page opens.
+. From the *Add Provider* item list, select *sssd.* The sssd configuration page opens.
 . Click *Save*.
 
 Now you can authenticate against {project_name} using FreeIPA/IdM credentials.
-

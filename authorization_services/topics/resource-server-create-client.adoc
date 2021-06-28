@@ -1,9 +1,9 @@
 [[_resource_server_create_client]]
-= Creating a Client Application
+= Creating a client application
 
 The first step to enable {project_name} Authorization Services is to create the client application that you want to turn into a resource server.
 
-To create a client application, complete the following steps:
+.Procedure
 
 . Click *Clients*.
 +

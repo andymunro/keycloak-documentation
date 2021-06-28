@@ -1,4 +1,4 @@
-= Before You Start
+= Before you start
 
 This guide is based on the *{project_name} Demo Distribution*. Download the demo distribution before proceeding.
 

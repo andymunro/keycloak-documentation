@@ -1,5 +1,5 @@
 [[_resource_server_enable_authorization]]
-= Enabling Authorization Services
+= Enabling authorization services
 
 To turn your OIDC Client Application into a resource server and enable fine-grained authorization, select *Access type* *confidential* and click the *Authorization Enabled* switch to *ON* then click *Save*.
 
@@ -42,7 +42,7 @@ From this page, you can <<_policy_evaluation_overview, simulate authorization re
 From this page, you can <<_resource_server_import_config, export>> the authorization settings to a JSON file.
 
 [[resource_server_settings]]
-== Resource Server Settings
+== Resource server settings
 
 On the Resource Server Settings page, you can configure the policy enforcement mode, allow remote resource management, and export the authorization configuration settings.
 
